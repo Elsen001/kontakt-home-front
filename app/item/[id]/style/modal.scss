@@ -1,4 +1,4 @@
-@use "../../../../assests/style/variables.scss";
+@use "../../../../assests/style/variables.scss" as *;
 .modal-overlay {
     position: fixed;
     top: 0;

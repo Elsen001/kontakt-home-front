@@ -1,6 +1,5 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { CiStar } from "react-icons/ci";
 import svgStar from "../../../../assests/images/star-svgrepo-com.svg";
 import "../style/comment.scss";
 import axios from "axios";

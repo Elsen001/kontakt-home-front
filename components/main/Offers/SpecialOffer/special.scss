@@ -1,0 +1,132 @@
+@import "../../../../assests/style/variables.scss";
+@import "../../../../assests/style/mixin.scss";
+
+.special-offer{
+    width: 94%;
+    display: flex;
+    flex-direction: column;
+    min-height: 500px;
+    background-color: greenyellow;
+    position: relative;
+    overflow: hidden;
+    .swiper-scrollbar{
+        height: 5px !important;
+        z-index: 2 !important;
+    }
+    .title{
+        padding: 0 50px;
+
+    }
+    
+    
+    .swiper-slide{
+        width: 300px !important;
+        height: 450px !important;
+        overflow: hidden;
+        border-radius: 10px;
+        margin: 30px 0;
+        z-index: 1 !important;
+        background-color: white;
+        cursor: pointer;
+        &:hover{
+            height: 550px !important;
+        }
+         
+        .article {
+            padding: 20px;
+            z-index: 4;
+
+        }
+        a {
+            display: flex;
+            justify-content: center;
+        }
+    
+        img {
+            width: 280px;
+            height: 290px;
+            border-radius: 10px;
+    
+    
+        }
+    
+        .card-title {
+            margin: 0 0 10px 0;
+
+        }
+    
+        .sale {
+            background-color: red;
+            color: white;
+            border-radius: 10px;
+            width: 50px;
+            padding: 4px;
+            margin: 25px 0 10px 0;
+            font-size: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    
+        .price-container {
+            display: flex;
+            justify-content: space-between;
+    
+            .price-item {
+                display: flex;
+                flex-direction: column;
+    
+                .price-before {
+                    text-decoration-line: line-through;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 14px;
+                    color: #777;
+                }
+    
+                .price-after {
+                    color: #ff003c;
+                    font-weight: bold;
+                }
+            }
+    
+            .credit-month {
+                align-self: flex-end;
+            }
+        }
+    
+        .add-to-cart {
+            display: flex;
+            justify-content: space-between;
+            z-index: 40 !important;
+            background-color: white;
+            width: 100%;
+            margin-top: 40px;
+            .fa-balance{
+                *{
+                    @include fa-balance;
+                }
+            }
+            button {
+                padding: 10px 15px;
+                font-size: 20px;
+                border-radius: 10px;
+    
+                &:nth-child(2) {
+                    margin: 0 9px;
+                }
+    
+                &:nth-child(3) {
+                    background-color: #ff003c;
+                    font-size: 14px;
+    
+                    * {
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+

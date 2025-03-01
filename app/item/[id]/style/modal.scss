@@ -1,0 +1,68 @@
+@import "../../../../assests/style/variables.scss";
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  .modal {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    min-height: 300px;
+    text-align: center;
+    .head{
+        height: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        button{
+            background: none;
+        }
+    }
+    .rating{
+        margin: 20px 0;
+        display: flex;
+        justify-content: space-evenly;
+        span{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            background-color: $content-bg-color;
+            height: 50px;
+            border-radius: 10px;
+        }
+        .form-icon{
+            width: 40px;  
+            height: 40px;
+            
+        }
+    }
+    input{
+        width: 100%;
+        border-bottom: 1px solid black;
+        padding: 20px 0;
+    }
+  }
+  .modal-buttons{
+    height:100px;
+  }
+  .modal-buttons button {
+    margin:50px 0;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background: transparent;
+  }
+  
+  

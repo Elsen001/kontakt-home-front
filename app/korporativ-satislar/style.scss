@@ -1,0 +1,162 @@
+@import "../../assests/style/variables.scss";
+@import "../../assests/style/mixin.scss";
+
+$store-padding: 0 50px;
+$bg-white: white;
+
+.CorporativeSales {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    width: $page-header-width;
+    margin: 0 auto;
+    margin-bottom: 60px;
+
+    .CorporativePartner {
+        background-color: $bg-white;
+
+        .corporativeTitle {
+            padding: 0 20px 120px 20px;
+            color: #323232;
+            font-weight: 400;
+            font-size: 15px;
+            font-size: 1.125em;
+
+        }
+
+        .logos {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 12px;
+
+            img {
+                width: 16%;
+                height: auto;
+            }
+        }
+    }
+
+    .CorporativeContent {
+        display: flex;
+        flex-direction: column;
+        color: #323232;
+        font-size: 17px;
+        font-weight: 300;
+
+        * {
+            line-height: 27px;
+        }
+
+        .head {
+            @include pageHeader;
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+
+        .description {
+            display: flex;
+            flex-direction: column;
+            padding: 20px 20px;
+            background-color: $bg-white;
+            font-weight: 400;
+            font-size: 1.125rem;
+            color:#323232;
+
+            &>* {
+                margin: 30px 0;
+            }
+
+            ul {
+                p {
+                    margin-bottom: 20px;
+                }
+
+                li {
+                    list-style: outside;
+                    margin-left: 20px;
+                }
+            }
+
+            .contact {
+                p {
+                    margin: 20px 0;
+                }
+
+                ul {
+                    li {
+                        margin: 17px 20px;
+
+                        a:link {
+                            color: #1D4ED8D9;
+
+                            &:hover {
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .swiper {
+            width: 100%;
+            height: 100%;
+
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100% !important;
+            height: 300px !important;
+            padding: 20px;
+            border-bottom-right-radius: 0 !important;
+            border-bottom-left-radius: 0 !important;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100% !important;
+            height: 100%;
+            border-radius: 0;
+            object-fit: cover;
+            object-position: left;
+        }
+
+    }
+}
+@media  screen and (max-width:1030px) {
+    .CorporativeSales{
+        width: 100%;
+        .CorporativeContent{
+            .head{
+                height: 56px;
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:780px) {
+    .CorporativeSales {
+        padding: 0;
+
+        .CorporativePartner {
+            .logos {
+                justify-content: center;
+
+                img {
+                    width: 80%;
+                }
+            }
+        }
+    }
+}

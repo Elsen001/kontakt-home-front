@@ -1,0 +1,36 @@
+$border-color:#eaeaea;
+
+.routeStyle {
+    background-color: white;
+    padding: 10px 45px;
+    margin: 0 auto;
+    border: 1px solid $border-color;
+    overflow: hidden;
+    .icon{
+        padding-right: 10px;
+        font-size: 14px;
+    }
+    a{
+        font-size: 12px;
+        padding: 0 1px;
+        margin: 0 5px;
+        font-weight: 500;
+
+    }
+    span{
+        font-size: 12px;
+        font-weight: 500;
+    }
+}
+@media screen and (max-width:1025) {
+    .routeStyle{
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .routeStyle{
+        padding: 10px;
+        overflow-x: scroll;
+    }
+}

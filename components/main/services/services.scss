@@ -1,0 +1,44 @@
+$main-bg-color:white;
+
+.services-container{
+    display: flex;
+    z-index: 20000 !important;
+    justify-content: space-between;
+    overflow-x: auto;
+    margin: 10px auto;
+    width: 94%;
+    z-index: 1000 !important;
+    a{
+        &:nth-child(2){
+            margin: 0 7px;
+        }
+        &:nth-child(3){
+            margin-right:7px;
+        }
+        .card-service{
+            height: 100px;
+            display: flex;
+            align-items: center;
+            background-color: $main-bg-color;
+            border-radius: 10px;
+            padding: 20px 10px;
+            .logo{
+                padding: 0 15px;
+            }
+            h4{
+                font-size: 14px;
+                margin-bottom: 5px;
+            }
+            p{
+                font-size: 12px;
+            }
+        }
+    }
+}
+ @media screen and (max-width:1070px) {
+    .services-container{
+        .card-service{
+            width: 340px;
+        }
+    }
+ }

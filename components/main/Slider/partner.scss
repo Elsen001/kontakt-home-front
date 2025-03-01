@@ -1,0 +1,26 @@
+$border-color:#eaeaea;
+
+.slider-container{
+  width: 94%;
+  margin: 10px auto;
+    background-color: white;
+    
+
+    .slider-item{
+        border: 1px solid $border-color;
+        border-radius: 10px;
+        display: flex !important;
+        align-items: center;
+        margin: 10px !important;
+        width: 65px !important;
+        height: 65px !important;
+        
+    }
+    .slick-prev {
+        display: none;
+
+      }
+      .slick-next {
+        display: none;
+      }
+}

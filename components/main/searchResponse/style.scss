@@ -1,0 +1,192 @@
+@import "../../../assests/style/variables.scss";
+
+.search-items {
+    width: 800px;
+    max-width: 900px;
+    margin: 0 auto;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+overflow-x: hidden;
+    height: 550px;
+    z-index: 200 !important;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+
+    .popular-category {
+        width: 32%;
+        height: 100%;
+        background-color: $content-bg-color;
+        display: flex;
+        flex-direction: column;
+
+        .title {
+            width: 90%;
+            margin: 10px auto;
+            padding: 15px 0;
+            font-weight: 600;
+            font-size: 16px;
+            border-bottom: 1px solid #777;
+        }
+
+        .links {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            margin-top: 10px;
+        }
+
+        a {
+            font-size: 12px;
+            font-weight: 600;
+            padding: 5px 15px;
+            color: #777;
+
+            &:hover {
+                background-color: white;
+            }
+        }
+    }
+
+    .popular-products {
+        padding: 0 20px;
+        width: 80%;
+        height: 100%;
+        background-color: white !important;
+        display: flex;
+        flex-direction: column;
+
+        .title {
+            width: 100%;
+            margin: 10px auto;
+            padding: 15px 0;
+            border-bottom: 1px solid #777;
+            font-size: 16px;
+            font-weight: 600;
+            color: #777;
+        }
+
+        .products {
+            .card {
+                margin: 10px 0;
+                gap: 10px;
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+
+
+
+
+                .product {
+                    display: flex;
+                    align-items: center;
+                    border: 1px solid $content-bg-color;
+                    transition: .2s;
+
+                    &:hover {
+                        box-shadow: rgba(130, 130, 130, 0.12) 0px 2px 4px 0px, rgba(107, 107, 107, 0.32) 0px 2px 16px 0px;
+                        transform: scale(1.040);
+                    }
+
+                    img {
+                        width: 100px;
+                        height: 100px;
+                        object-fit: contain;
+                        padding: 3px;
+                    }
+
+                    .product-details {
+                        font-size: 12px;
+                        padding: 0 10px;
+
+                        .title-product {
+                            width: 140px;
+                            overflow: hidden;
+                            font-size: 12px;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                            font-weight: 600;
+                        }
+
+                        .price {
+                            color: #777;
+                            font-weight: 600;
+                            margin-top: 5px;
+
+                            .old-price {
+                                text-decoration: line-through;
+                                color: #d1d2d4;
+                                font-weight: 500;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1025px) {
+    .search-items {
+        margin-top: 21px;
+        box-shadow: none;
+    }
+}
+
+@media screen and (max-width:860px) {
+    .search-items {
+        width: 100%;
+        height: 100%;
+        overflow-y: auto;
+        flex-direction: column;
+
+
+        .popular-category,
+        .popular-products {
+            width: 100%;
+            margin: 0;
+            background-color: white;
+
+
+        }
+
+        .popular-products {
+            height: 300px;
+        }
+
+        .popular-category {
+
+            .links {
+                padding: 0 20px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:550px) {
+    .search-items {
+        .popular-products {
+            min-height: 1000px !important;
+            order: 1;
+            .card {
+                flex-direction: column;
+
+                .product {
+                    .product-details {
+                        .title-product {
+                            width: 100% !important;
+                            white-space: wrap;
+                            text-overflow: initial !important;
+                        }
+                    }
+                }
+
+            }
+        }
+
+        .popular-category {
+            order: 2;
+            min-height:700px;
+        }
+    }
+}

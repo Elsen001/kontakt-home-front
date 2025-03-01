@@ -1,0 +1,207 @@
+@import "../../assests/style/variables.scss";
+@import "../../assests/style/mixin.scss";
+
+@mixin footerItem {
+    color: #777;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: .02em;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+
+footer {
+    background-color: $footer-bg-color;
+    width: 100%;
+    .footer-top {
+        padding: 55px 80px 20px 80px;
+        display: flex;
+        justify-content: space-between;
+        .title {
+            font-size: 16px;
+            font-weight: 600;
+            color: $text_color;
+            margin-bottom: 25px;
+        }
+        a {
+            @include footerItem
+        }
+        .weOnMap{
+            color: $text-color;
+            font-weight: 500;
+            font-size: 12px;
+        }
+        .footer-contact{
+            display: flex;
+            flex-direction: column;
+            .visa-master{
+                display: flex;
+                align-items: center;
+                span{
+                    &:last-child{
+                        margin-left: 10px;
+                    }
+                }
+            }
+            span{
+                margin-bottom: 15px;
+               color: #17a539;
+               font-weight: 700;
+               font-size: 14px;
+            }
+            a{
+                margin-bottom: 45px;
+            }
+            
+        }
+
+        .footer-contact, .footer-store, .footer-info, .footer-client, .footer-stayWithUs {
+            width: 180px;
+            div {
+                display: flex;
+                flex-direction: column;
+
+                a {
+                    margin-bottom: 22px;
+                }
+            }
+        }
+
+        .footer-contact {
+            width: 83px;
+        }
+
+        .footer-stayWithUs,
+        .footer-contact {
+            div {
+                flex-direction: row;
+            }
+            
+        }
+
+        .footer-stayWithUs {
+            width: 260px;
+            .social-icons{
+                padding-top: 5px;
+                a:not(:first-child){
+                    padding-left: 20px;
+                }
+            }
+           
+        }
+    }
+
+    .footer-bottom {
+        background: none;
+        padding: 15px 0;
+        text-align: center;
+        color: $text_color;
+        font-size: 12px;
+        background-color: $content-bg-color;
+        color: $text-color;
+        font-weight: 500;
+    }
+}
+
+
+@media screen and (max-width:1050px) {
+    footer{
+        width: 100%;
+        a{
+            *{
+                color: $link-color;
+            }
+        }
+        .footer-top{
+            width: 800px;
+            max-width: 100%;
+            flex-direction: column;
+            padding: 40px 20px;
+            .footer-contact{
+                width: 100%;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 20px 0;
+                order: 2;
+                border-bottom: 1px solid $border-color;
+                border-top: 1px solid $border-color;
+                .visa-master{
+                    display: flex;
+                    align-items: center;
+                    span{
+                        &:last-child{
+                            margin-left: 50px;
+                        }
+                    }
+                }
+                .title{display: none;}
+                a,span{
+                    margin: 0;
+                    padding: 0;
+                }
+                a{
+                    font-size: 15px;
+                }
+                h4{
+                    display: none;
+                }
+            }
+            .footer-client,.footer-info,.footer-store{
+                width: 100%;
+                margin: 15px 0;
+                border-bottom: 1px solid $border-color;
+                order: 3;
+                padding: 10px 0;
+                div{
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    a{
+                        display: inline-block;
+                        width: 50%;
+                    }
+                   
+                }
+            }
+            .footer-info{
+                order: 2;
+            }
+            .footer-client{
+                border: none;
+            }
+            .footer-stayWithUs{
+                order: 1;
+                width: 100%;
+                justify-content: space-between;
+                
+            }
+        }
+    }
+}
+
+@media screen and (max-width:350px) {
+    footer{
+        .footer-top{
+            .footer-contact{
+                .visa-master{
+                   overflow-x: scroll;
+                    span{
+                        &:last-child{
+                            margin-left: 10px;
+                        }
+                    }
+                }
+            }
+            .footer-stayWithUs{
+                
+                .social-icons{
+                    justify-content: center;
+                    flex-wrap: wrap;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,66 @@
+@import "../../../assests/style/variables.scss";
+
+.dayOffer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width:100%;
+    background-color: $bg-white;
+    border-bottom: 1px solid $border-color;
+   .offer-text{
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    padding-top: 20px;
+   }
+
+   
+
+    .time {
+        width: 100%;
+        height: 54px;
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+
+        span {
+            color: #17a539;
+            font-size: 15px;
+            font-weight: 600;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 5px 15px;
+            position: relative;
+            &:nth-child(2){
+                position: relative;
+                margin: 0 2px;
+              
+                &::after,&::before{
+                    content: "";
+                    width: 10px;
+                    height: 1px;
+                    background-color: $border-color;
+                }
+                &::after{
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    transform: rotate(90deg);
+                }
+                &::before{
+                    position: absolute;
+                    top: 50%;
+                    right: 0;
+                    transform: rotate(90deg);
+                }
+            }
+            mark {
+                background-color: white;
+                font-size: 12px;
+            }
+        }
+    }
+}

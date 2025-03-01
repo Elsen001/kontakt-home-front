@@ -1,0 +1,212 @@
+$item-background: #ff003c;
+$main-bg-color: white;
+$footer-bg-color: white;
+$content-bg-color: #f3f3f3;
+$icon-size: 20px;
+$text-size: 16px;
+$border-color: #eaeaea;
+$header-padding: 0 50px;
+$footer-item-color: #777;
+$sales-button-bg: #eaeaea;
+$bg-white: white;
+$padding-container: 10px 50px;
+
+///////////////
+$page-header-width: 94%;
+$font-weight: 600;
+$bg-white: white;
+$page-radius: 10px;
+$text-color: #323232;
+$link-color: #b0b01d;
+$footer-item-color: #777;
+$border-color: #eaeaea;
+$footer-bg-color: white;
+
+.comment {
+    background-color: white;
+    padding: 30px;
+    margin-bottom: 80px;
+    border-top: 1px solid $border-color;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+    .comment-title {
+        font-size: 20px;
+        font-weight: 700;
+        padding: 30px 0 15px 0;
+
+        span {
+            color: #777;
+            font-weight: 600;
+        }
+    }
+
+    .star-rating {
+        display: flex;
+        align-items: center;
+
+        .rating {
+            margin-right: 10px;
+            font-weight: 500;
+        }
+
+        .star {
+            * {
+                color: #FF9933;
+                font-size: 20px;
+                stroke-width: 1px;
+            }
+        }
+
+        span {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    .form {
+        display: flex;
+        justify-content: space-between;
+        margin: 20px 0;
+
+        input {
+            padding: 20px 0;
+            background-color: #F7F5F5;
+            width: 100%;
+            font-size: 16px;
+            text-indent: 10px;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            caret-color: #777;
+
+        }
+
+        button {
+            width: 120px;
+            border: 1px solid #323232;
+            font-size: 18px;
+            color: #323232;
+            background-color: white;
+            border-radius: 10px;
+            font-weight: 500;
+        }
+    }
+
+    .comments {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 35px 0;
+        gap: 40px;
+
+        .comment-item:not(:last-child) {
+            border-bottom: 1px solid $content-bg-color;
+
+        }
+
+        .comment-item {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding: 20px 0;
+            .users {
+                display: flex;
+                width: 40%;
+
+                .user {
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 50%;
+                    background-color: #0B84AC;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: white;
+                    font-weight: 700;
+                    font-size: 22px;
+                }
+
+                .date-added {
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: column;
+                    margin-left: 10px;
+                    gap: 5px;
+
+                    .name {
+                        font-weight: 600;
+                    }
+
+                    .date {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+
+
+        .star-comment-container {
+            margin: 5px 0 !important;
+            min-height: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .star-count {
+                width: 120px;
+                display: flex;
+                justify-content: space-between;
+
+                img {
+                    width: 20px;
+                    height: 20px;
+                }
+
+            }
+
+            .user-comment {
+                font-size: 14px;
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1020px) {
+    .comment {
+        padding: 20px;
+
+        .comment-title {
+            padding: 10px 0 15px 0;
+
+        }
+
+        .form {
+            flex-direction: column;
+
+            button {
+                width: 100%;
+                padding: 9px;
+                margin: 10px 0;
+            }
+
+            input {
+                border-radius: 10px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:550px) {
+    .comments{
+        justify-content: space-between;
+        .comment-item{
+            .star-comment-container{
+                width: 60%;
+               align-items: flex-end;
+               text-align: right;
+              
+            }
+        }
+    }
+}

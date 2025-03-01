@@ -1,0 +1,167 @@
+@import "../../assests/style/variables.scss";
+@import "../../assests/style/mixin.scss";
+
+$store-padding: 30px 20px;
+
+@mixin location-text {
+    font-size: 14px;
+    font-weight: 500;
+    color: #777;
+    letter-spacing: 0.02em;
+}
+
+
+
+.stores-container {
+    width: $page-header-width;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+
+    .location-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 30px 0 20px 0;
+
+        button {
+            @include sales-btn;
+
+        }
+
+        button:not(:first-child) {
+            margin-left: 10px;
+        }
+    }
+
+    .stores {
+        display: flex;
+        align-items: center;
+        @include pageHeader;
+        margin: 10px 0;
+
+    }
+
+    .map {
+        background-color: $bg-white;
+        padding: $store-padding;
+
+    }
+}
+
+.location-container {
+    width: $page-header-width;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0 auto;
+    margin-bottom: 100px;
+
+    .location-items {
+        background-color: white;
+        width: 445px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 20px 4px 20px 14px;
+
+        .location-name {
+            font-weight: 600;
+            font-size: 14px;
+            padding-bottom: 6px;
+        }
+
+        .location-addres {
+            @include location-text
+        }
+
+        div:nth-child(1) {
+            font-weight: bold;
+            font-size: 14px;
+
+        }
+
+        div:nth-child(2) {
+            padding: 10px 0 40px 0;
+
+        }
+
+        div:nth-child(3) {
+            font-weight: 400;
+        }
+
+        .workhours {
+            @include location-text
+        }
+
+        div span {
+            padding-right: 20px;
+            color: #17a539;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+    }
+}
+
+@media screen and (max-width:1020px) {
+    .stores-container {
+        padding: 0;
+        width: 100%;
+        .stores{
+            height: 56px;
+            font-size: 14px;
+        }
+        .location-buttons{
+            padding: 0 20px;
+        }
+    }
+
+    .location-container {
+        justify-content: center;
+        
+    }
+}
+
+@media screen and (max-width:550px) {
+    .location-container {
+        padding: 0;
+        width: 100%;
+       
+    }
+
+    .stores-container {
+        .location-buttons {
+            button {
+                padding: 10px;
+                font-size: 12px;
+                font-weight: 600;
+                margin: 0;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:960px) {
+    .location-container {
+        .location-items {
+            width: 450px;
+
+            &:nth-child(1) {
+                margin-top: 20px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:500px) {
+
+    .location,
+    .location-container {
+        padding: 0;
+    }
+
+    
+}

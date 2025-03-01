@@ -1,0 +1,73 @@
+@import "../../assests/style/mixin.scss";
+@import "../../assests/style/variables.scss";
+
+
+.trade-in {
+    width: $page-header-width;
+    margin: 0 auto;
+    .trade-title {
+        @include pageHeader;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        margin: 10px auto;
+     }
+     .trade-content{
+        color: $text-color;
+        font-weight: 400;
+        background-color: $bg-white;
+        margin-bottom: 70px;
+        border-radius:$page-radius;
+        strong{font-weight: $font-weight;}
+        .progress-event{font-weight: $font-weight;padding: 24px 0 15px 0;display: inline-block;}
+        h2{font-size: 18px;padding-bottom: 22px;}
+     }
+
+
+
+    p,ul>li{
+        font-size: 1.125rem;
+    }
+
+    
+
+    ul {
+        padding-left: 20px;
+        li {
+            list-style-type: initial;
+
+        }
+    }
+
+    * {
+        line-height: 27px;
+    }
+
+   
+
+    .trade-content {
+        padding: 30px 20px;
+
+
+        .step-1{
+            .product-images{
+                padding-bottom: 10px;
+            }
+        }
+        .step-4{
+            h5{
+                padding-bottom: 10px;
+            }
+        }
+    }
+}
+@media screen and (max-width:1030px) {
+    .trade-in{
+        padding: 0;
+        width: 100%;
+        .trade-title{
+            height: 56px;
+            font-size: 14px;
+        }
+    }
+}

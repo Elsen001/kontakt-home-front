@@ -1,0 +1,296 @@
+@import "../../../assests/style/variables.scss";
+
+.inCartSlider {
+    background-color: $content-bg-color !important;
+    color: $text-color !important;
+
+    * {
+        color: $text-color !important;
+    }
+}
+
+.Slider-container {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+
+    .section-1 {
+        width: 74%;
+        height: 80vh;
+        margin: 0 10px;
+        .mySwiper {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            border-radius: 10px;
+
+            a {
+                cursor: pointer;
+                width: 100%;
+                height: 100%;
+            }
+
+            .swiper-item {
+                display: flex;
+                align-items: center;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                border-radius: 10px;
+                object-fit: cover;
+            }
+        }
+    }
+
+    .section-2 {
+        width: 25%;
+        background-color: white;
+
+        .mySwiper2 {
+
+            .swiper-slide {
+                padding: 20px;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                text-align: center;
+                justify-content: space-between;
+                height: 65vh;
+
+                .offer-head {
+                    width: 100%;
+                    margin: 0;
+
+                    img {
+                        margin-top: 15px;
+                        padding: 0;
+                        width: 90%;
+                        height: 200px;
+                    }
+
+                    .product-title {
+                        font-size: 18px;
+                        font-weight: 600;
+                        padding-bottom: 10px;
+                    }
+
+                    p {
+                        padding-bottom: 5px;
+
+                        span {
+                            margin: 0 3px;
+
+                            &:first-child {
+                                color: red;
+                                font-weight: 700;
+                                font-size: 20px;
+                            }
+
+                            &:last-child {
+                                color: #777;
+                                font-weight: 700;
+                                font-size: 14px;
+                                text-decoration: line-through;
+                            }
+                        }
+                    }
+                }
+
+                .offer-footer {
+                    display: flex;
+                    width: 88%;
+                    flex-direction: column;
+                    gap: 10px;
+
+                    button {
+                        position: relative;
+                        width: 100%;
+                        height: 50px;
+                        background-color: #ff003c;
+                        font-weight: 500;
+                        color: white;
+                        font-size: 14px;
+                        border-radius: 10px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 10px;
+
+                        .spin {
+                            display: inline-block;
+                            height: 20px;
+                            position: absolute;
+                            left: 50%;
+                            transform: translate(-50%);
+
+                            img {
+                                width: 20px;
+                                height: auto;
+                                transform: scale(1.2);
+
+                            }
+                        }
+
+                        * {
+                            color: white;
+                        }
+
+                        .icon-shopping {
+                            font-size: 16px;
+                        }
+
+                    }
+
+                    a {
+                        color: #323232;
+                        font-size: 14px;
+                        font-weight: 500;
+                    }
+                }
+
+            }
+        }
+
+    }
+}
+
+@media screen and (max-width:1225px) {
+    .Slider-container {
+        position: relative;
+        overflow: visible;
+        flex-direction: column;
+        width: 100%;
+        height: 90%;
+
+        .section-1 {
+            width: 100%;
+            height: 100%;
+        }
+
+        .section-2 {
+            position: absolute;
+            top: 100vh;
+            width: 100% !important;
+            height: 300px;
+            z-index: 10000 !important;
+            border-radius: 10px;
+
+
+            .time {
+                justify-content: flex-end;
+                align-items: center;
+                margin: 0;
+
+                .dayOffer {
+                    width: 96%;
+                    margin: 0 auto;
+                    flex-direction: row;
+                    justify-content: space-between;
+                }
+
+                .offer-text {
+                    width: 200px;
+                    padding-top: 0;
+                    font-size: 16px;
+                }
+            }
+
+            .mySwiper2 {
+                .swiper-slide {
+                    height: 250px;
+                    flex-direction: row;
+
+                    .offer-head {
+                        display: flex;
+
+                        .product-title {
+                            font-size: 14px;
+                        }
+
+                        .month {
+                            font-size: 14px;
+                        }
+
+                        p {
+                            display: flex;
+                            align-items: center;
+                            flex-direction: column;
+
+
+                            span {
+                                margin: 0;
+
+                                &:first-child {
+                                    font-size: 16px;
+
+                                }
+
+                                &:last-child {
+                                    font-size: 14px;
+                                    font-weight: 500;
+                                }
+                            }
+                        }
+
+
+                        img {
+                            width: 150px;
+                            height: 150px;
+                            margin-right: 20px;
+                            order: 1;
+                        }
+
+                        &>div {
+                            width: 300px;
+                            height: 100px;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: flex-start;
+                            order: 2;
+                        }
+                    }
+
+                    .offer-footer {
+                        width: 100%;
+                        position: absolute;
+                        left: 190px;
+                        bottom: 50px;
+
+                        button {
+                            width: 130px;
+                            padding: 10px 0;
+                            gap: 8px;
+                            background-color: $content-bg-color;
+
+                            * {
+                                color: #323232;
+
+                            }
+
+                        }
+
+                        a {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width:600px) {
+    .Slider-container{
+        .section-2{
+            top: 72vh;
+        }
+    }
+}

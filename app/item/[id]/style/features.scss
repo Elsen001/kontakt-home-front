@@ -1,0 +1,115 @@
+$item-background:#ff003c;
+$main-bg-color:white;
+$footer-bg-color:white;
+$content-bg-color:#f3f3f3;
+$icon-size:20px;
+$text-size:16px;
+$border-color:#eaeaea;
+$header-padding:0 50px;
+$footer-item-color:#777;
+$sales-button-bg:#eaeaea;
+$bg-white:white;
+$padding-container:10px 50px;
+
+///////////////
+$page-header-width:94%;
+$font-weight:600;
+$bg-white:white;
+$page-radius:10px;
+$text-color:#323232;
+$link-color:#b0b01d;
+$footer-item-color:#777;
+$border-color:#eaeaea;
+$footer-bg-color:white;
+
+.Features{
+    width: 100%;
+    min-height: auto;
+    background-color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin:40px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    .title-features{font-size: 20px;font-weight: 600;margin-bottom: 10px;}
+    .features-list{
+        width: 98%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-around;
+        .feature-left{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2px;
+            .features-name{
+                font-size: 14px;
+                border-bottom: 1px solid $border-color;
+                width: 49%;
+                padding: 12px 10px;
+                display: flex;
+                justify-content: space-between;
+               
+            }
+            .name{
+                font-weight: 500;
+                color: #777;
+            }
+            .param{
+                color: #323232;
+                font-weight: 500;
+            }
+        }
+
+    }
+    button{
+        width: 98%;
+        margin: 30px auto;
+        padding: 10px 0;
+        border-radius: 10px;
+        font-weight: 500;
+        font-size: 14px;
+        transition: 400ms;
+        &:hover{
+            background-color: #F9F9F9;
+            color: #acacac;
+        }
+    }
+    
+}
+@media screen and (max-width:1025px) {
+    .Features{
+        .features-list{
+            .feature-left{
+                width: 100%;
+                .features-name{
+                    width: 100%;
+                }
+            }
+        }
+        button{
+            margin-top: 20px;
+            margin-bottom: 0;
+        }
+    }
+}
+
+
+@media screen and (max-width:550px) {
+    .Features{
+        .features-list{
+            .feature-left{
+                .features-name{
+                    overflow-x: auto;
+                    align-items: center;
+                    span{
+                        display: inline-block;
+                        width: 200px;
+                    }
+                }
+            }
+        }
+    }
+}

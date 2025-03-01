@@ -1,4 +1,4 @@
-@import "../../../../assests/style/mixin.scss";
+@use "../../../../assests/style/mixin.scss" as *;
 $item-background:#ff003c;
 $main-bg-color:white;
 $footer-bg-color:white;

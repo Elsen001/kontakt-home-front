@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 import React, { useEffect } from "react";
 
 interface DetailsProps {
-    name: string
+    name?: string
 
 }
 

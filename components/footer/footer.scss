@@ -1,5 +1,5 @@
-@import "../../assests/style/variables.scss";
-@import "../../assests/style/mixin.scss";
+@use "../../assests/style/variables.scss";
+@use "../../assests/style/mixin.scss" as *;
 
 @mixin footerItem {
     color: #777;

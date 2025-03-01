@@ -1,5 +1,5 @@
-@import "../../../assests/style/variables.scss";
-@import "../../../assests/style/mixin.scss";
+@use "../../../assests/style/variables.scss" as *;
+@use "../../../assests/style/mixin.scss" as *;
 
 $padding-title: 20px 15px;
 $price-color: #ff003c;

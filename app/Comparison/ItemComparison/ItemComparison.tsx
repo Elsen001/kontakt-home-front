@@ -64,7 +64,7 @@ const ItemComparison = () => {
         const uniqueFeatures = [...new Set(allFeatures)];
     
         const similarFeatures = uniqueFeatures.filter(featureName =>
-            balanced.every(item => item.features && item.features[featureName] === balanced[0].features[featureName])
+            balanced.every(item => item.features && item.features[featureName] === balanced[0].features?[featureName]:"")
         );
     
         return similarFeatures;
@@ -77,7 +77,7 @@ const ItemComparison = () => {
         const uniqueFeatures = [...new Set(allFeatures)];
     
         const differentFeatures = uniqueFeatures.filter(featureName =>
-            balanced.some(item => item.features && item.features[featureName] !== balanced[0].features[featureName])
+            balanced.some(item => item.features && item.features[featureName] !== balanced[0].features?[featureName]:"")
         );
     
         return differentFeatures;
@@ -165,7 +165,7 @@ const ItemComparison = () => {
                                                 (selectedOption === "differences" && differentFeatures.includes(featureName))
                                             ) && (
                                                 <h4 style={{ textTransform: "capitalize" }} key={featureName}>
-                                                    {formatFeatureName(featureValue)}
+                                                    {formatFeatureName(featureValue?featureValue:"")}
                                                 </h4>
                                             )
                                         )

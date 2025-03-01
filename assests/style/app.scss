@@ -9,7 +9,7 @@
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
-    color: $text_color;
+    color: #323232;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     list-style: none;
     outline: none;
@@ -21,7 +21,7 @@
 body{
     width: 100%;
     height: 100%;
-    background-color: $content-bg-color;
+    background-color: #f3f3f3;
 }
 
 .activeStore {

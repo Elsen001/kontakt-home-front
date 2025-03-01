@@ -6,6 +6,7 @@ import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import logo from "../../assests/images/Kontakt_Home.png";
 
+
 const customIcon = new L.Icon({
   iconUrl: logo.src,
   iconSize: [40, 40],

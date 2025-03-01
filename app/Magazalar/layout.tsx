@@ -1,7 +1,11 @@
 "use client"
 import React, { useState } from "react";
-import Map from "@/components/map/Map";
+import dynamic from 'next/dynamic';
 import Location from "@/components/storeLocation/Location";
+
+const Map = dynamic(() => import('@/components/map/Map'), {
+  ssr: false,
+});
 
 export default function StoreLayout({
     children,

@@ -28,7 +28,6 @@ import youtube from "../footer/images/image (6).svg"
 import tiktok from "../footer/images/image (7).svg"
 import { LiaTimesSolid } from "react-icons/lia";
 import { IoIosInformationCircleOutline } from "react-icons/io";
-import { useRouter } from "next/router";
 interface Response {
     data: any;
 }
@@ -41,20 +40,21 @@ const Header = () => {
     const pathname = usePathname();
     const [header, setHeader] = useState(true);
     const [loading, setLoading] = useState(false)
-    const [inputFocus, setInputFocus] = useState(false);
     const cart = useSelector((state: RootState) => state.cart.cart);
     const balanced = useSelector((state: RootState) => state.balanced.balanced);
     const { toggleCategory } = useCategory();
-    const [isMobile, setIsMobile] = useState(window.innerWidth < 900);
+    const [isMobile, setIsMobile] = useState(false);
     const [allCollection, setAllCollection] = useState<any[]>([]);
     const [keyword, setKeyword] = useState("");
 
 
     useEffect(() => {
+        setIsMobile(window.innerWidth < 900);
+    
         const handleResize = () => {
             setIsMobile(window.innerWidth < 900);
         };
-
+    
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
     }, []);

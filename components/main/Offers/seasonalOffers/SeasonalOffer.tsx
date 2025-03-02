@@ -73,7 +73,26 @@ const SeasonalOffer: React.FC<productOfferProps> = ({ productOfferItems }) => {
                     <h4>Mövsüm təklifləri</h4>
 
                 </div>
-                <Swiper className="swiper-special" spaceBetween={10} slidesPerView={5}>
+                <Swiper className="swiper-special" spaceBetween={10} slidesPerView={5.3}
+                breakpoints={{
+                    320: {
+                        slidesPerView: 1.8,
+                        spaceBetween: 10,
+                    },
+                    480: {
+                        slidesPerView: 1.8,
+                        spaceBetween: 10,
+                    },
+                    768: {
+                        slidesPerView: 1.8,
+                        spaceBetween: 10,
+                    },
+                    1225: {
+                        slidesPerView: 5.3,
+                        spaceBetween: 10,
+                    },
+                }}
+                >
                     {productOfferItems.map((i, index) => {
                         const isInCart = cart.some(cartItem => cartItem.id === i.id);
 

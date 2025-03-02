@@ -28,6 +28,7 @@ import youtube from "../footer/images/image (6).svg"
 import tiktok from "../footer/images/image (7).svg"
 import { LiaTimesSolid } from "react-icons/lia";
 import { IoIosInformationCircleOutline } from "react-icons/io";
+import Category from "../main/Category/Category";
 interface Response {
     data: any;
 }
@@ -183,7 +184,7 @@ const Header = () => {
                 <div className="cart-balance-heart-res">
                     <Link href={"/Comparison"}><FaBalanceScale className="icon-res" /><span>Müqayisə {balanced.length > 0 && <span className="cart-length">{balanced.length}</span>}</span></Link>
                     <Link href={"/"}><FaRegHeart className="icon-res" /> <span>Seçilmişlər </span></Link>
-                    <Link href={"/Cart"}><FiShoppingCart className="icon-res" /> <span>Sebet {cart.length > 0 && <span className="cart-length">{cart.length}</span>}</span></Link>
+                    <Link href={"/Səbət"}><FiShoppingCart className="icon-res" /> <span>Sebet {cart.length > 0 && <span className="cart-length">{cart.length}</span>}</span></Link>
                 </div>
                 <div className="pages">
                     <div><Link prefetch={true} className={`link ${pathname === '/Trade-in' ? 'active' : ''}`} href="/Trade-in">Trade-in</Link><span><FaChevronRight /></span></div>

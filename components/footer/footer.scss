@@ -20,6 +20,9 @@ footer {
         padding: 55px 80px 20px 80px;
         display: flex;
         justify-content: space-between;
+        &>div{
+            padding: 10px;
+        }
         .title {
             font-size: 16px;
             font-weight: 600;
@@ -27,7 +30,7 @@ footer {
             margin-bottom: 25px;
         }
         a {
-            @include footerItem
+            @include footerItem;
         }
         .weOnMap{
             color: $text-color;
@@ -120,6 +123,9 @@ footer {
             max-width: 100%;
             flex-direction: column;
             padding: 40px 20px;
+            .title{
+                margin-bottom: 10px;
+            }
             .footer-contact{
                 width: 100%;
                 flex-direction: row;
@@ -152,16 +158,18 @@ footer {
             }
             .footer-client,.footer-info,.footer-store{
                 width: 100%;
-                margin: 15px 0;
+                margin: 5px 0;
                 border-bottom: 1px solid $border-color;
                 order: 3;
-                padding: 10px 0;
+                padding: 5px 0;
                 div{
                     flex-direction: row;
                     flex-wrap: wrap;
                     a{
                         display: inline-block;
                         width: 50%;
+                        margin: 8px 0;
+                        
                     }
                    
                 }

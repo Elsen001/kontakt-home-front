@@ -473,13 +473,12 @@ $item-padding: 20px;
 
                     .item-body {
                         height: auto;
-                        padding: 50px 0;
+                        padding: 50px 10px;
 
                         .item-body-btns {
                             width: 100%;
-
                             button {
-                                padding: 10px 10px;
+                                padding: 10px 0;
 
                                 &:hover {
                                     background-color: #CDCDCD;
@@ -491,14 +490,17 @@ $item-padding: 20px;
                                 }
 
                                 &:first-child {
-                                    width: 30%;
+                                    width: 24%;
                                     display: block;
-                                    margin: 0 10px;
                                 }
 
                                 &:last-child {
+                                    width: 70%;
                                     &:hover {
                                         background-color: #CDCDCD;
+                                    }
+                                    .fa-icon{
+                                        display: none;
                                     }
 
                                     background-color: $content-bg-color;

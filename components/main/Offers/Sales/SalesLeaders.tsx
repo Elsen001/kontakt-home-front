@@ -78,7 +78,29 @@ const SalesLeaders: React.FC<productOfferProps> = ({ productOfferItems }) => {
                         ))}
                     </div>
                 </div>
-                <Swiper spaceBetween={10} slidesPerView={5}>
+                <Swiper slidesPerView={5.3}
+                    spaceBetween={10}
+                    breakpoints={{
+                        320: {
+                            slidesPerView: 1.8,
+                            spaceBetween: 10,
+                        },
+                        480: {
+                            slidesPerView: 1.8,
+                            spaceBetween: 10,
+                        },
+                        768: {
+                            slidesPerView: 1.8,
+                            spaceBetween: 10,
+                        },
+                        1225: {
+                            slidesPerView: 5.3,
+                            spaceBetween: 10,
+                        },
+                    }}
+                    pagination={{
+                        clickable: true,
+                    }}  >
                     {productOfferItems.map((i, index) => {
 
                         return (

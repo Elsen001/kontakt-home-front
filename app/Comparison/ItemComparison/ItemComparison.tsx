@@ -32,10 +32,11 @@ const ItemComparison = () => {
     const [cartItems, setCartItems] = useState<string[]>([]); 
     const [balanceName, setBalanceName] = useState<BalanceItem[]>([]);
     const [selectedOption, setSelectedOption] = useState<"all" | "similiar" | "differences">("all");
+    console.log(balanceName)
 
     async function getBalanceItem() {
         try {
-            const response = await axios.get<BalanceResponse>("http://localhost:5000/api/balance");
+            const response = await axios.get<BalanceResponse>("https://kontakt-back-2.onrender.com/api/balance");
 
             const extractedData = response.data.data[0]?.data || [];
             setBalanceName(extractedData);
@@ -60,11 +61,11 @@ const ItemComparison = () => {
     const getSimilarFeatures = (): string[] => {
         if (balanced.length === 0) return [];
     
-        const allFeatures = balanced.flatMap(item => Object.keys(item.features || {}));
+        const allFeatures = balanced.flatMap(item => item.features ? Object.keys(item.features) : []);
         const uniqueFeatures = [...new Set(allFeatures)];
     
         const similarFeatures = uniqueFeatures.filter(featureName =>
-            balanced.every(item => item.features && item.features[featureName] === balanced[0].features?[featureName]:"")
+            balanced.every(item => item.features && item.features[featureName] === balanced[0].features?.[featureName])
         );
     
         return similarFeatures;
@@ -73,11 +74,11 @@ const ItemComparison = () => {
     const getDifferentFeatures = (): string[] => {
         if (balanced.length === 0) return [];
     
-        const allFeatures = balanced.flatMap(item => Object.keys(item.features || {}));
+        const allFeatures = balanced.flatMap(item => item.features ? Object.keys(item.features) : []);
         const uniqueFeatures = [...new Set(allFeatures)];
     
         const differentFeatures = uniqueFeatures.filter(featureName =>
-            balanced.some(item => item.features && item.features[featureName] !== balanced[0].features?[featureName]:"")
+            balanced.some(item => item.features && item.features[featureName] !== balanced[0].features?.[featureName])
         );
     
         return differentFeatures;
@@ -122,9 +123,11 @@ const ItemComparison = () => {
                                     if (selectedOption === "differences") return differentFeatures.includes(i.name); 
                                     return false;
                                 })
+                                
                                 .map(i => (
                                     <h4 style={{ textTransform: "capitalize" }} key={i.id}>
                                         {i.name}
+                                       
                                     </h4>
                                 ))
                         }
@@ -165,11 +168,10 @@ const ItemComparison = () => {
                                                 (selectedOption === "differences" && differentFeatures.includes(featureName))
                                             ) && (
                                                 <h4 style={{ textTransform: "capitalize" }} key={featureName}>
-                                                    {formatFeatureName(featureValue?featureValue:"")}
+                                                    {featureValue ? formatFeatureName(featureValue) : ""}
                                                 </h4>
                                             )
-                                        )
-                                        )}
+                                        ))}
                                 </div>
                             </div>
                         ))

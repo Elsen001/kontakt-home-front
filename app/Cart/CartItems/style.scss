@@ -118,7 +118,7 @@ $padding-container: 10px 50px;
                     width: 320px;
                     margin-left: 10px;
 
-                    div {
+                    a {
                         width: 100%;
                         font-size: 16px;
                         font-weight: 600;
@@ -479,18 +479,3 @@ $padding-container: 10px 50px;
     }
 }
 
-@media screen and (max-width:500px) {
-    .cart-items-container {
-        .cart-table {
-            .cart-wrapper {
-                .cart-product {
-                    .product-info {
-                    }
-
-                    
-
-                }
-            }
-        }
-    }
-}

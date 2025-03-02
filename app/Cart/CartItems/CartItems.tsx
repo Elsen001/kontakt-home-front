@@ -9,6 +9,7 @@ import { IoIosAddCircleOutline } from "react-icons/io";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/redux/store/store";
 import { addToCart, changeItemCount, deleteItems } from "@/redux/reducers/AddToCartReducer";
+import Link from 'next/link';
 
 const CartItems = () => {
     const dispatch = useDispatch();
@@ -46,7 +47,7 @@ const CartItems = () => {
                                 </div>
                                 <img src={item.image} alt={item.name} />
                                 <div className="product-info">
-                                    <div>{item.name.slice(0, 40)}</div><br />
+                                    <Link href={`/item/${item.id}`}>{item.name.slice(0, 40)}</Link><br /><br />
                                     <button className="warranty-button"><IoIosAddCircleOutline /> Zəmanət</button>
                                 </div>
                                 <div className="prd-content-price">

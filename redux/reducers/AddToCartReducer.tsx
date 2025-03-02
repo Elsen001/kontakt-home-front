@@ -96,8 +96,11 @@ const cartSlice = createSlice({
                 return total + (Number(item.oldPrice) - Number(item.price));
             }, 0));
         },
+        emptyItems:(state)=>{
+            state.cart = [];
+        }
     }
 });
 
-export const { addToCart, changeItemCount, deleteItems } = cartSlice.actions;
+export const { addToCart, changeItemCount, deleteItems,emptyItems } = cartSlice.actions;
 export default cartSlice.reducer;

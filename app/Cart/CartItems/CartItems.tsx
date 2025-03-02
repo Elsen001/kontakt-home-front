@@ -8,7 +8,7 @@ import { HiOutlineTrash } from "react-icons/hi2";
 import { IoIosAddCircleOutline } from "react-icons/io";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/redux/store/store";
-import { addToCart, changeItemCount, deleteItems } from "@/redux/reducers/AddToCartReducer";
+import { addToCart, changeItemCount, deleteItems, emptyItems } from "@/redux/reducers/AddToCartReducer";
 import Link from 'next/link';
 
 const CartItems = () => {
@@ -31,7 +31,7 @@ const CartItems = () => {
                     <div className="cart-item-title"> <strong>Səbət</strong> ({cart.length} məhsul) </div>
                     <div className="cart-item-select">
                         <button className='select-all' disabled={true}>Hamısını seç</button>
-                        <button><HiOutlineTrash className="trash-icon" /> Seçilənləri sil</button>
+                        <button onClick={()=>dispatch(emptyItems())}><HiOutlineTrash className="trash-icon" /> Seçilənləri sil</button>
                     </div>
                 </div>
                 <div className="cart-wrapper">

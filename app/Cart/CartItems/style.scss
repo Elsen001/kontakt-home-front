@@ -86,6 +86,7 @@ $padding-container: 10px 50px;
                 padding: 20px 0;
                 border-bottom: 1px solid #eaeaea;
                 position: relative;
+
                 .prd-content-price {
                     display: flex;
                     align-items: center;
@@ -171,6 +172,7 @@ $padding-container: 10px 50px;
                     text-align: center;
                     white-space: nowrap;
                     width: 150px;
+
                     .new-price {
                         font-weight: bold;
                         color: $price-color;
@@ -382,6 +384,7 @@ $padding-container: 10px 50px;
                     padding: 70px 0;
 
                     img {
+                        min-width: 100px !important;
                         margin-left: 15px;
                     }
 
@@ -394,18 +397,24 @@ $padding-container: 10px 50px;
 
                     .prd-content-price {
                         align-items: center;
-                        position: absolute;
-                        left: 100px;
-                        top: 45%;
-                        display: flex;
                         flex-wrap: wrap;
-                        justify-content: space-between;
+                        position: absolute;
+                        left: 115px;
+                        top: 45%;
 
                         .pricing {
                             order: 1;
+                            text-align: right !important;
+
+                            .new-price {
+                                display: inline-block;
+                                width: 80px;
+                            }
 
                             .old-price {
                                 font-size: 14px;
+                                display: inline-block;
+                                width: 80px !important;
                             }
                         }
 
@@ -417,9 +426,7 @@ $padding-container: 10px 50px;
                     .product-info {
                         margin-bottom: 40px;
 
-                        h3 {
-                            font-size: 14px;
-                            font-weight: 500;
+                        a {
                         }
                     }
 
@@ -478,4 +485,3 @@ $padding-container: 10px 50px;
         }
     }
 }
-

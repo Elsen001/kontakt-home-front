@@ -47,10 +47,10 @@ const SalesLeaders: React.FC<productOfferProps> = ({ productOfferItems }) => {
 
         setTimeout(() => {
             setLoading(null);
+            setCartItems(prev => [...prev, String(item.id)]);
         }, 1000);
     };
 
-    const isInCart = (id: number) => cart.some(cartItem => cartItem.id === id);
 
     useEffect(() => {
 
@@ -128,11 +128,11 @@ const SalesLeaders: React.FC<productOfferProps> = ({ productOfferItems }) => {
                                             </button>
                                             <button onClick={() => handleAddToBalance(i)}><FaBalanceScale className={balanceItems.includes(String(i.id)) ? "fa-balance" : ""} /></button>
                                             <button
-                                                className={isInCart(Number(i.id)) ? "inCart" : ""}
-                                                onClick={() => handleAddToCart(i)}
+                                                 className={cartItems.includes(String(i.id)) ? "inCart" : ""}
+                                                 onClick={() => handleAddToCart(i)}
                                             >
                                                 <FontAwesomeIcon icon={faCartShopping} className='icon icon-shopping ' />
-                                                <span>{isInCart(Number(i.id)) ? "Səbətdə" : "Səbətə at"}</span>
+                                                <span>{cartItems.includes(String(i.id)) ? "Səbətdə" : "Səbətə at"}</span>
                                                 {loading === String(i.id) && <span className="spin"><Image src={gif} alt="loading..." /></span>}
                                             </button>
 

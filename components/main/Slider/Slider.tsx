@@ -54,7 +54,7 @@ const Slider = () => {
   }, [dispatch, productOffer.length]);
 
   return (
-    <div className='Slider-container'>
+    <div className='SliderContainer'>
       <section className="section-1">
         <Swiper
           slidesPerView={1.3}
@@ -65,7 +65,7 @@ const Slider = () => {
         >
           {
             sliderOffer?.map((item) => (
-              <SwiperSlide className="swiper-item" >
+              <SwiperSlide >
                 <Link key={item.id} href={"/cart"}>
                   <img src={item.image} alt="" />
                 </Link>
@@ -74,7 +74,6 @@ const Slider = () => {
           }
         </Swiper>
       </section>
-
       <section className="section-2">
         <div className="time"><CountdownTimer /></div>
         <Swiper

@@ -2,7 +2,7 @@ $border-color:#eaeaea;
 
 .slider-container{
   width: 94%;
-  margin: 10px auto;
+  margin: 800px auto 10px;
     background-color: white;
     
 
@@ -23,4 +23,11 @@ $border-color:#eaeaea;
       .slick-next {
         display: none;
       }
+}
+@media screen and (max-width:1160px) {
+  .slider-container{
+    margin: 20px auto 10px;
+    width: 98%;
+
+  }
 }

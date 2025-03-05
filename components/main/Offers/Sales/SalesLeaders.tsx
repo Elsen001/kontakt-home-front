@@ -68,7 +68,7 @@ const SalesLeaders: React.FC<productOfferProps> = ({ productOfferItems }) => {
     }
 
     return (
-        <section className="section-sales scstop">
+        <section className="section-sales scstop" >
             <div className="special-slider-container">
                 <div className="sales-leaders">
                     <h4>Satış liderləri</h4>

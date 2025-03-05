@@ -2,7 +2,7 @@
 import "./header.scss";
 import { FaChevronRight, FaRegHeart, FaRegUser } from "react-icons/fa6";
 import { FiShoppingCart } from "react-icons/fi";
-import { FaBalanceScale, FaTimes } from "react-icons/fa";
+import { FaBalanceScale, FaRegTimesCircle, FaTimes } from "react-icons/fa";
 import { LuLayoutGrid } from "react-icons/lu";
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
@@ -29,6 +29,9 @@ import tiktok from "../footer/images/image (7).svg"
 import { LiaTimesSolid } from "react-icons/lia";
 import { IoIosInformationCircleOutline } from "react-icons/io";
 import Category from "../main/Category/Category";
+import Slider from "../main/Slider/Slider";
+import SliderPartner from "../main/Slider/SliderPartner";
+import Services from "../main/services/Services";
 interface Response {
     data: any;
 }
@@ -43,7 +46,7 @@ const Header = () => {
     const [loading, setLoading] = useState(false)
     const cart = useSelector((state: RootState) => state.cart.cart);
     const balanced = useSelector((state: RootState) => state.balanced.balanced);
-    const { toggleCategory } = useCategory();
+    const { isCategoryOpen, toggleCategory } = useCategory();
     const [isMobile, setIsMobile] = useState(false);
     const [allCollection, setAllCollection] = useState<any[]>([]);
     const [keyword, setKeyword] = useState("");
@@ -51,11 +54,11 @@ const Header = () => {
 
     useEffect(() => {
         setIsMobile(window.innerWidth < 900);
-    
+
         const handleResize = () => {
             setIsMobile(window.innerWidth < 900);
         };
-    
+
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
     }, []);
@@ -125,128 +128,143 @@ const Header = () => {
     useEffect(() => {
         if (showNav) {
             document.body.style.overflow = 'hidden';
-        }else{
+        } else {
             document.body.style.overflow = 'auto';
         }
     }, [showNav])
 
-    useEffect(()=>{
+    useEffect(() => {
         setShowNav(false)
-    },[pathname])
+    }, [pathname])
 
-   
+    const [open, setOpen] = useState(false)
+
+    function openResponse() {
+        setOpen(true)
+        getAllCollections()
+    }
+
+    function closeResponse() {
+        setOpen(false);
+    }
+    
+    const [isMobileSearch, setIsMobileSearch] = useState(false);
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobileSearch(window.innerWidth < 760);
+        };
+    
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
 
 
     return (
         <>
             <Poster />
-            <header>
-                <div className={header ? "header-top" : "hidden"}>
-                    <div className='logo-img'>
-                        <Link href={"/"}>
-                            <Image src={logo} alt="" />
-                        </Link>
-                    </div>
-                    <nav>
-                        <Link prefetch={true} className={`link ${pathname === '/Trade-in' ? 'active' : ''}`} href="/Trade-in">Trade-in</Link>
-                        <Link prefetch={true} className={`link ${pathname === '/Magazalar' ? 'active' : ''}`} href="/Magazalar">Magazalar</Link>
-                        <Link prefetch={true} className={`link ${pathname === '/korporativ-satislar' ? 'active' : ''}`} href="/korporativ-satislar">Korporativ satislar</Link>
-                        <div className="register">
-                            <span className='cont'><span>*</span> 6060</span>
-                            <Link className='payment' href="/payment">Aylıq Ödəniş</Link>
-                            <Link className='signIn' href="/">Daxil ol</Link>
-                            <span className='language'>AZ <FontAwesomeIcon icon={faChevronDown} /></span>
-                            <FaRegUser onClick={() => showNavFunc()} className="fa-user-icon" />
-                        </div>
-                    </nav>
-
+            <header style={{ display: header ? "flex" : "none" }}>
+                <Link className="logo" href={"/"}>
+                    <Image src={logo} alt="" />
+                </Link>
+                <div className="links">
+                    <Link prefetch={true} className={`link ${pathname === '/Trade-in' ? 'active' : ''}`} href="/Trade-in">Trade-in</Link>
+                    <Link prefetch={true} className={`link ${pathname === '/Magazalar' ? 'active' : ''}`} href="/Magazalar">Magazalar</Link>
+                    <Link prefetch={true} className={`link ${pathname === '/korporativ-satislar' ? 'active' : ''}`} href="/korporativ-satislar">Korporativ satislar</Link>
+                </div>
+                <div className="register">
+                    <span className='cont'><span className="color">*</span> 6060</span>
+                    <Link className='payment' href="/payment">Aylıq Ödəniş</Link>
+                    <Link className='signIn' href="/">Daxil ol</Link>
+                    <span className='language'>AZ <FontAwesomeIcon className="down" icon={faChevronDown} /></span>
+                    <FaRegUser onClick={() => showNavFunc()} className="fa-user-icon" />
                 </div>
             </header>
-            <div style={{ display: showNav ? "block" : "none" }} className="reponseive-container">
-                <div className="res-title">
-                    <h4>Hesab və ayarlar</h4>
-                    <LiaTimesSolid className="times" onClick={() => showNavFunc()} />
+            <nav className={header ? "" : "fixedNav"}>
+                <div className="katalog">
+                    <span onClick={toggleCategory}><LuLayoutGrid className="grid" /></span>
+                    <div>Kataloq</div>
+                    <Link href={"/"}><Image style={{ visibility: header ? "hidden" : "visible" }} src={svgLogo} alt="" /></Link>
                 </div>
-                <button className="pay-month">
-                    <CiWallet />  <span>Aylıq ödəniş</span>
-                </button>
-                <div className="warning">
-                <IoIosInformationCircleOutline className="info" />
-                    <p>Şəxsi kabinet ilkin test mərhələsindədir. Dəstək üçün<strong> *6060</strong> və ya <strong>info@kontakt.az</strong></p>
-                </div>
-                <div className="signInToYourAccount">
-                    <div className="fa-user-res"><FaRegUser /></div>
-                    <div className="href">
-                        <Link href={"/"}>Hesaba giriş və qeydiyyat</Link>
-                        <Link href={"/"}>Şəxsi hesaba keçid</Link>
+                <div className="search">
+                    <div className={ isMobileSearch && open ? "search-bar-res": "search-bar"}>
+                        <div className="search-box">
+                            <FontAwesomeIcon icon={faMagnifyingGlass} className='search-icon' />
+                            <input
+                                value={keyword}
+                                onChange={(e) => {
+                                    setKeyword(e.target.value);
+                                    handleSearch(e.target.value);
+                                }}
+                                type="text"
+                                placeholder='Axtaris...'
+                                onFocus={openResponse}
+                                onBlur={() => setTimeout(() => setOpen(false), 200)}
+                            />
+                            <div className="times">
+                                <FaRegTimesCircle onClick={closeResponse} />
+                            </div>
+                        </div>
+
+                        <div style={{ display: open ? "flex" : "none" }} className="search-response" onMouseDown={(e) => e.preventDefault()}>
+                            <SearchResponse loading={loading} allCollection={allCollection} keyword={keyword} />
+                        </div>
                     </div>
+
                 </div>
-                <div className="cart-balance-heart-res">
-                    <Link href={"/Comparison"}><FaBalanceScale className="icon-res" /><span>Müqayisə {balanced.length > 0 && <span className="cart-length">{balanced.length}</span>}</span></Link>
-                    <Link href={"/"}><FaRegHeart className="icon-res" /> <span>Seçilmişlər </span></Link>
-                    <Link href={"/Səbət"}><FiShoppingCart className="icon-res" /> <span>Sebet {cart.length > 0 && <span className="cart-length">{cart.length}</span>}</span></Link>
-                </div>
-                <div className="pages">
-                    <div><Link prefetch={true} className={`link ${pathname === '/Trade-in' ? 'active' : ''}`} href="/Trade-in">Trade-in</Link><span><FaChevronRight /></span></div>
-                    <div><Link prefetch={true} className={`link ${pathname === '/Magazalar' ? 'active' : ''}`} href="/Magazalar">Magazalar</Link><span><FaChevronRight /></span></div>
-                    <div><Link prefetch={true} className={`link ${pathname === '/korporativ-satislar' ? 'active' : ''}`} href="/korporativ-satislar">Korporativ satislar</Link><span><FaChevronRight /></span></div>
-                </div>
-                <div className="contact-res">
-                    <span className='cont-res'>Elaqe<span>*6060</span> </span>
-                    <div className="social-icons">
-                        <a href=""><Image src={facebook} alt='' /></a>
-                        <a href=""><Image src={instagram} alt='' /></a>
-                        <a href=""><Image src={whatsapp} alt='' /></a>
-                        <a href=""><Image src={telegram} alt='' /></a>
-                        <a href=""><Image src={youtube} alt='' /></a>
-                        <a href=""><Image src={tiktok} alt='' /></a>
+                <div style={{ display: showNav ? "block" : "none" }} className="reponseive-container">
+                    <div className="res-title">
+                        <h4>Hesab və ayarlar</h4>
+                        <LiaTimesSolid className="times" onClick={() => showNavFunc()} />
                     </div>
-                </div>
-            </div>
-            <div style={{ top: header ? "112px" : "56px" }}
-                className="header-bottom">
-                <div className="category">
-                    <span style={{ order: pathname === "Details" ? "3" : "1" }} className="icon-grid"><LuLayoutGrid onClick={() => {
-                        if (isMobile) {
-                            toggleCategory();
-                        }
-                    }} className="menu icon" /></span>
-                    <span style={{ order: pathname === "Details" ? "2" : "1" }} className="katalog">Kataloq</span><span style={{ display: header ? "none" : "block" }} >
-                        <Image
-                            style={{ order: pathname === "Details" ? "1" : "2" }}
-                            src={svgLogo}
-                            alt=""
-                        />
-                    </span>
-                </div>
-                <div className="search-bar">
-                    <FontAwesomeIcon icon={faMagnifyingGlass} className='search icon' />
-                    <input
-                        value={keyword}
-                        onChange={(e) => {
-                            setKeyword(e.target.value);
-                            handleSearch(e.target.value);
-                        }}
-                        onFocus={() => getAllCollections()}
-                        type="text"
-                        placeholder='Axtaris...'
-                    />
-                    <div className="search-response">
-                        <SearchResponse loading={loading} allCollection={allCollection} keyword={keyword} />
+                    <button className="pay-month">
+                        <CiWallet />  <span>Aylıq ödəniş</span>
+                    </button>
+                    <div className="warning">
+                        <IoIosInformationCircleOutline className="info" />
+                        <p>Şəxsi kabinet ilkin test mərhələsindədir. Dəstək üçün<strong> *6060</strong> və ya <strong>info@kontakt.az</strong></p>
+                    </div>
+                    <div className="signInToYourAccount">
+                        <div className="fa-user-res"><FaRegUser /></div>
+                        <div className="href">
+                            <Link href={"/"}>Hesaba giriş və qeydiyyat</Link>
+                            <Link href={"/"}>Şəxsi hesaba keçid</Link>
+                        </div>
+                    </div>
+                    <div className="cart-balance-heart-res">
+                        <Link href={"/Comparison"}><FaBalanceScale className="icon-res" /><span>Müqayisə {balanced.length > 0 && <span className="cart-length">{balanced.length}</span>}</span></Link>
+                        <Link href={"/"}><FaRegHeart className="icon-res" /> <span>Seçilmişlər </span></Link>
+                        <Link href={"/Səbət"}><FiShoppingCart className="icon-res" /> <span>Sebet {cart.length > 0 && <span className="cart-length">{cart.length}</span>}</span></Link>
+                    </div>
+                    <div className="pages">
+                        <div><Link prefetch={true} className={`link ${pathname === '/Trade-in' ? 'active' : ''}`} href="/Trade-in">Trade-in</Link><span><FaChevronRight /></span></div>
+                        <div><Link prefetch={true} className={`link ${pathname === '/Magazalar' ? 'active' : ''}`} href="/Magazalar">Magazalar</Link><span><FaChevronRight /></span></div>
+                        <div><Link prefetch={true} className={`link ${pathname === '/korporativ-satislar' ? 'active' : ''}`} href="/korporativ-satislar">Korporativ satislar</Link><span><FaChevronRight /></span></div>
+                    </div>
+                    <div className="contact-res">
+                        <span className='cont-res'>Elaqe<span>*6060</span> </span>
+                        <div className="social-icons">
+                            <a href=""><Image src={facebook} alt='' /></a>
+                            <a href=""><Image src={instagram} alt='' /></a>
+                            <a href=""><Image src={whatsapp} alt='' /></a>
+                            <a href=""><Image src={telegram} alt='' /></a>
+                            <a href=""><Image src={youtube} alt='' /></a>
+                            <a href=""><Image src={tiktok} alt='' /></a>
+                        </div>
                     </div>
                 </div>
                 <div className="basket">
-                    <Link href={"/Comparison"} prefetch={true}>
+                    <Link className="compar" href={"/Comparison"} prefetch={true}>
                         <span className="icon-balanced"><FaBalanceScale /> {balanced.length > 0 && <span className="cart-length">{balanced.length}</span>} </span>
                     </Link>
-                    <Link href={"/"} prefetch={true}>
+                    <Link className="like" href={"/"} prefetch={true}>
                         <span className="heart"><FaRegHeart /></span>
                     </Link>
-                    <Link href={"/Cart"} prefetch={true}>
+                    <Link className="cart" href={"/Cart"} prefetch={true}>
                         <span className="cart"> <FiShoppingCart /> {cart.length > 0 && <span className="cart-length">{cart.length}</span>}</span>
                     </Link>
                 </div>
-            </div>
+            </nav>
+            <Category />
         </>
     );
 };

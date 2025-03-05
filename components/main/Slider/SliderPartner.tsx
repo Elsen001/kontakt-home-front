@@ -24,7 +24,7 @@ import logo16 from "../../../assests/images/partner/16.webp";
 import logo17 from "../../../assests/images/partner/17.webp";
 import logo18 from "../../../assests/images/partner/18.webp";
 
-function AutoPlayMethods() {
+function SliderPartner() {
   const sliderRef = useRef<Slider | null>(null);
   const partnerImages = [
     logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8, logo9, logo10,
@@ -79,4 +79,4 @@ function AutoPlayMethods() {
   );
 }
 
-export default AutoPlayMethods;
+export default SliderPartner;

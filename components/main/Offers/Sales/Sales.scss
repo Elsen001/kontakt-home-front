@@ -24,6 +24,7 @@
     flex-direction: column;
     min-height: 500px;
     margin-top: 10px;
+    margin-bottom: 140px;
 
     h4 {
         padding: 20px 0;
@@ -57,7 +58,7 @@
     }
 
     .swiper {
-        z-index: 1000;
+        z-index: 1;
         overflow: hidden;
 
         .swiper-slide {
@@ -235,7 +236,11 @@
 
 
 
-@media screen and (max-width:1225px) {
+@media screen and (max-width:1160px) {
+    .section-sales{
+        margin-bottom: 40px;
+    }
+    
     .sales-leaders {
        padding: 0 20px !important;
         width: auto;
@@ -252,7 +257,7 @@
         }
     }
     .scstop{
-        margin-top: 350px;
+        margin-top: 50px;
 
     }
     .section-sales{

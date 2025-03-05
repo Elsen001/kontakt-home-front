@@ -8,14 +8,15 @@
     left: 50%;
     transform: translate(-50%);
     display: flex;
-overflow-x: hidden;
-    height: 550px;
-    z-index: 200 !important;
+    overflow-x: hidden;
+    min-height: 500px;
+    z-index: 4 !important;
+    background-color: white;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 
     .popular-category {
         width: 32%;
-        height: 100%;
+        height: 100% !important;
         background-color: $content-bg-color;
         display: flex;
         flex-direction: column;
@@ -23,7 +24,7 @@ overflow-x: hidden;
         .title {
             width: 90%;
             margin: 10px auto;
-            padding: 15px 0;
+            padding: 20px 0;
             font-weight: 600;
             font-size: 16px;
             border-bottom: 1px solid #777;
@@ -49,12 +50,13 @@ overflow-x: hidden;
     }
 
     .popular-products {
-        padding: 0 20px;
+        padding: 10px 20px;
         width: 80%;
         height: 100%;
         background-color: white !important;
         display: flex;
         flex-direction: column;
+       
 
         .title {
             width: 100%;
@@ -128,7 +130,7 @@ overflow-x: hidden;
 
 @media screen and (max-width:1025px) {
     .search-items {
-        margin-top: 21px;
+        height: 100%;
         box-shadow: none;
     }
 }
@@ -139,7 +141,7 @@ overflow-x: hidden;
         height: 100%;
         overflow-y: auto;
         flex-direction: column;
-
+        background-color: white;
 
         .popular-category,
         .popular-products {
@@ -163,11 +165,11 @@ overflow-x: hidden;
     }
 }
 
-@media screen and (max-width:550px) {
+@media screen and (max-width:760px) {
     .search-items {
         .popular-products {
-            min-height: 1000px !important;
-            order: 1;
+            min-height: 1200px !important;
+            order: 2;
             .card {
                 flex-direction: column;
 
@@ -186,7 +188,15 @@ overflow-x: hidden;
 
         .popular-category {
             order: 2;
-            min-height:700px;
+            min-height: 650px;
+            margin-top: 70px;
+
+            a{
+                font-size: 16px;
+                font-weight: 500;
+            }
+
         }
     }
 }
+

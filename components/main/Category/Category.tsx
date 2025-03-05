@@ -33,9 +33,10 @@ import svg21 from "./categoryIcons/21.svg";
 import Image from "next/image";
 import { useCategory } from "./CategoryContext";
 import { LiaTimesSolid } from "react-icons/lia";
+import { usePathname } from "next/navigation";
 
 const Category = () => {
-  const { isCategoryOpen,toggleCategory  } = useCategory();
+  const { isCategoryOpen, toggleCategory } = useCategory();
   const icons = [
     svg1, svg2, svg3, svg4, svg5, svg6, svg7, svg8, svg9, svg10,
     svg11, svg12, svg13, svg14, svg15, svg16, svg17, svg18, svg19, svg20, svg21
@@ -46,7 +47,8 @@ const Category = () => {
   const [isHovered, setIsHovered] = useState(false);
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
-
+  const [isClicked, setIsClicked] = useState(false);
+  const pathname = usePathname();
 
 
   useEffect(() => {
@@ -59,38 +61,40 @@ const Category = () => {
     document.body.style.overflow = isCategoryOpen ? "hidden" : "auto";
   }, [isCategoryOpen]);
 
-  
 
+    
+
+  const handleClick = () => {
+    
+  };
+ 
 
   return (
-    <div className="category" >
-      <div className="category-list" style={{left: isCategoryOpen ? "0%" : "-100%", width:isCategoryOpen?"100%":"26%", zIndex:isCategoryOpen?"10000":"1000" }} >
-        {isLoading && <p>Loading...</p>}
-        {error && <p>Error: {error}</p>}
-        {categoryItems && (
-          <>
-          <div className="res-katalog"><span>Kataloq</span><LiaTimesSolid onClick={toggleCategory} className="times-res"/></div>
-            {categoryItems.map((item, index) => (
-              <Link key={item.id} className="c-link" href={"/"}
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
-              >
-                <div className="category-name">
-                  <Image src={icons[index % icons.length]} alt={`Icon for ${item.name}`} />
-                  <div className="item">{item.name}</div>
-                </div>
-                <div className="arrow-icon">
-                  <FontAwesomeIcon icon={faChevronRight} />
-                </div>
+    <div   className={isCategoryOpen ? "responsive-menu" : "category-list"}
+    style={pathname !== "/" ? { display: isCategoryOpen ? "flex" : "none" } : {}}
+    onClick={handleClick}>
+      {isLoading && <p>Loading...</p>}
+      {error && <p>Error: {error}</p>}
+      {categoryItems && (
+        <>
+          <div className="res-katalog"><span>Kataloq</span><LiaTimesSolid onClick={  toggleCategory} className="times-res" /></div>
+          {categoryItems.map((item, index) => (
+            <Link key={item.id} className="c-link" href={"/"}
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+            >
+              <div className="category-name">
+                <Image src={icons[index % icons.length]} alt={`Icon for ${item.name}`} />
+                <div className="item">{item.name}</div>
+              </div>
+              <div className="arrow-icon">
+                <FontAwesomeIcon icon={faChevronRight} />
+              </div>
+            </Link>
+          ))}
+        </>
+      )}
 
-              </Link>
-            ))}
-          </>
-        )}
-      </div>
-      <div className="category-content">
-        <Slider />
-      </div>
     </div>
   );
 };

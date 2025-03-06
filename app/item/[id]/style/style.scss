@@ -622,7 +622,11 @@ $border-radius: 10px;
 
 @media screen and (max-width:1150px) {
     .top {
+<<<<<<< HEAD
+        top: 105px;
+=======
         top: 95px !important;
+>>>>>>> fcbdd86 (front final)
     }
 
     .details {

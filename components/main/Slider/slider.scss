@@ -67,7 +67,11 @@
                     }
 
                     img {
+<<<<<<< HEAD
+                        margin-top: 15px;
+=======
                         margin-top: 50px;
+>>>>>>> fcbdd86 (front final)
                         padding: 0;
                         width: 90%;
                         height: 200px;
@@ -82,8 +86,12 @@
 
                     p {
                         padding-bottom: 5px;
+<<<<<<< HEAD
+
+=======
                       margin-top: 10px;
                       height: 25px;
+>>>>>>> fcbdd86 (front final)
                         span {
                             margin: 0 3px;
 
@@ -109,6 +117,10 @@
                     flex-direction: column;
                     gap: 10px;
                     margin-top: 20px;
+<<<<<<< HEAD
+
+=======
+>>>>>>> fcbdd86 (front final)
                     button {
                         position: relative;
                         width: 100%;
@@ -171,7 +183,11 @@
         }
         .section-2 {
             width: 100% !important;
+<<<<<<< HEAD
+            height: 300px;
+=======
             height: 320px;
+>>>>>>> fcbdd86 (front final)
             z-index: 2;
             border-radius: 10px;
             margin: 20px 0;
@@ -202,10 +218,16 @@
 
                     .offer-head {
                         display: flex;
+<<<<<<< HEAD
+
+                        .product-title {
+                            font-size: 14px;
+=======
                         align-items: flex-start;
                         .product-title {
                             font-size: 14px;
                             padding-bottom: 1px;
+>>>>>>> fcbdd86 (front final)
                         }
 
                         .month {
@@ -216,7 +238,11 @@
                             display: flex;
                             align-items: flex-start;
                             flex-direction: column;
+<<<<<<< HEAD
+
+=======
                             height: auto;
+>>>>>>> fcbdd86 (front final)
                             span {
                                 margin: 0;
 
@@ -237,12 +263,19 @@
                             width: 150px;
                             height: 150px;
                             margin-right: 20px;
+<<<<<<< HEAD
+=======
                             margin-top: 0;
+>>>>>>> fcbdd86 (front final)
                             order: 1;
                         }
 
                         &>div {
                             width: 300px;
+<<<<<<< HEAD
+                            height: 100px;
+=======
+>>>>>>> fcbdd86 (front final)
                             display: flex;
                             flex-direction: column;
                             justify-content: center;
@@ -255,7 +288,11 @@
                         width: 100%;
                         position: absolute;
                         left: 174px;
+<<<<<<< HEAD
+                        bottom: 50px;
+=======
                         bottom: 60px;
+>>>>>>> fcbdd86 (front final)
 
                         button {
                             width: 130px;

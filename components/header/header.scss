@@ -32,7 +32,382 @@ $content-bg-color: #f3f3f3;
     color: white;
 }
 
+<<<<<<< HEAD
+// header {
+//     background-color: $main-bg-color;
+//     margin-bottom: 59px;
 
+//     .header-top {
+//         display: flex;
+//         justify-content: space-between;
+//         align-items: center;
+//         border-bottom: 1px solid $border-color;
+//         padding: 11px 30px;
+//         margin-top: 55px;
+
+//         .logo-img {
+//             width: 200px;
+//             margin-left: 20px;
+
+//             img {
+//                 transform: scale(1.2);
+//             }
+//         }
+
+
+//         * {
+//             @include textHeader
+//         }
+
+
+
+//         nav {
+//             display: flex;
+//             align-items: center;
+//             gap: 20px;
+
+//             a {
+//                 color: $text_color;
+//                 font-size: 16px;
+
+//                 &:hover {
+//                     text-decoration: underline;
+//                 }
+//             }
+//         }
+
+//         .register {
+//             display: flex;
+//             align-items: center;
+//             position: relative;
+//             margin-left: 75px;
+//             font-size: 14px;
+//             gap: 17px;
+
+//             .cont {
+//                 display: flex;
+//                 margin-right: 8px;
+
+//                 span {
+//                     color: red;
+//                     padding: 0;
+//                     margin: 0;
+//                 }
+//             }
+
+//             .signIn {
+//                 margin-right: 0;
+//             }
+
+
+//             span:first-child {
+//                 font-size: 20px;
+//                 font-weight: 600;
+//             }
+
+//             .payment {
+//                 @include btnGroup;
+//                 color: #17a539;
+//                 border: 1px solid #17a539;
+//             }
+
+//             .signIn {
+//                 background-color: #f3f3f3;
+//                 @include btnGroup;
+//                 color: $text_color;
+//             }
+
+//             .language {
+//                 border: none;
+//                 display: flex;
+//                 align-items: center;
+
+//                 * {
+//                     font-size: 12px;
+//                     margin-left: 8px;
+//                 }
+//             }
+//         }
+
+//         .fa-user-icon {
+//             display: none;
+//             cursor: pointer;
+//         }
+//     }
+
+
+// }
+
+// .header-bottom {
+//     width: 100%;
+//     display: flex;
+//     justify-content: space-between;
+//     padding: 11px 30px;
+//     position: fixed;
+//     z-index: 2000 !important;
+//     height: 62px;
+//     background-color: $bg-white;
+//     border-bottom: 1px solid $border-color;
+//     border-top: 1px solid $border-color;
+
+//     .icon {
+//         font-size: $icon-size;
+//     }
+
+//     .category {
+//         display: flex;
+//         align-items: center;
+//         margin-left: 0;
+//         cursor: pointer;
+
+//         span {
+//             display: flex;
+//             align-items: center;
+//             font-weight: 500;
+//             font-size: $text-size;
+//             margin: 0 7px;
+
+//             &:last-child {
+//                 margin-left: 10px;
+//                 display: none;
+//                 order: 2;
+//             }
+
+//             img {
+//                 order: 1;
+//             }
+//         }
+
+//         .menu {
+//             font-size: 20px;
+//         }
+//     }
+
+
+
+//     .basket {
+//         width: 160px;
+//         display: flex;
+//         justify-content: space-between;
+//         align-items: center;
+//         margin-right: 25px;
+
+//         * {
+//             font-size: 20px;
+//         }
+
+//         .heart {
+//             border-left: 1px solid $border-color;
+//             border-right: 1px solid $border-color;
+//             display: flex;
+//             align-items: center;
+//             padding: 0 20px;
+//             height: 40px;
+//         }
+
+//         span {
+//             position: relative;
+//             display: flex;
+//             align-items: center;
+
+//             .cart-length {
+//                 position: absolute;
+//                 top: -7px;
+//                 right: -13px;
+//                 border-radius: 5px;
+//                 background-color: red;
+//                 font-size: 10px;
+//                 color: white;
+//                 width: 15px;
+//                 height: 15px;
+//                 display: flex;
+//                 justify-content: center;
+//             }
+//         }
+
+//     }
+// }
+
+// @media screen and (max-width:1250px) {
+//     header {
+//         .header-top {
+//             .register {
+//                 margin-left: 20px;
+
+//                 .cont {
+//                     margin-right: 10px;
+//                 }
+//             }
+//         }
+
+//     }
+
+// }
+
+// @media screen and (max-width:1025px) {
+//     header {
+//         .header-top {
+//             padding: 14px 15px;
+//             border: none;
+
+//             nav {
+//                 gap: 20px;
+
+//                 .link {
+//                     display: none;
+//                 }
+//             }
+
+//             .fa-user-icon {
+//                 display: block;
+//                 font-size: 18px;
+//                 margin: 0 8px 0 15px;
+//             }
+
+//             .register {
+
+//                 .payment,
+//                 .signIn {
+//                     display: none;
+//                 }
+
+//                 .cont {
+//                     font-size: 16px !important;
+//                     display: flex;
+//                     align-items: center;
+
+//                     span {
+//                         font-size: 15px;
+//                     }
+//                 }
+//             }
+//         }
+
+
+//     }
+
+//     .header-bottom {
+//         padding: 0;
+//         border: 1px solid $border-color;
+
+//         .category {
+//             height: auto;
+//             padding: 0 20px;
+//             margin-right: 0;
+
+//             span {
+//                 margin: 0;
+
+//             }
+
+//             img {
+//                 display: none;
+//             }
+
+//             .katalog {
+//                 display: none;
+//             }
+
+//             button {
+//                 background-color: rebeccapurple;
+//             }
+
+//             .menu {
+//                 height: 60px;
+//             }
+
+//             .icon-grid {
+//                 border-right: 1px solid $border-color;
+//                 padding: 0 20px 0 0;
+//                 z-index: 1;
+//             }
+//         }
+
+//         .search-bar {
+//             position: absolute;
+//             width: 100%;
+//             top: 0;
+//             height: 100%;
+//             margin-right: 20px;
+
+//             .search {
+//                 left: 15%;
+//             }
+
+//             .search-response {
+//                 min-height: 100vh;
+//             }
+
+//             input {
+//                 width: 74%;
+//                 margin: 0 auto;
+//                 background-color: white;
+//                 text-indent: 6%;
+//             }
+//         }
+
+//         .basket {
+//             margin-right: 0;
+//             width: auto;
+//             z-index: 2;
+
+//             a {
+//                 &:last-child {
+//                     padding: 0 20px;
+//                     border-left: 1px solid $border-color ;
+//                 }
+//             }
+
+//             span {
+//                 .cart-length {
+//                     top: 10px;
+//                 }
+//             }
+
+//             .icon-balanced,
+//             .heart {
+//                 display: none;
+//             }
+
+
+//             .cart {
+//                 margin-right: 10px;
+//                 height: 60px;
+//             }
+//         }
+//     }
+// }
+
+// @media screen and (max-width:580px) {
+//     header {
+//         .header-top {
+//             .register {
+//                 margin-left: 10px;
+//                 gap: 2px;
+//             }
+
+//             .logo-img {
+//                 margin-left: 10px;
+//             }
+//         }
+//     }
+
+//     .header-bottom {
+//         .search-bar {
+//             .search {
+//                 left: 23%;
+//             }
+
+//             input {
+//                 width: 60%;
+//                 text-indent: 9%;
+//             }
+//         }
+//     }
+// }
+=======
+
+>>>>>>> fcbdd86 (front final)
 
 @mixin rescon {
     width: 96%;
@@ -414,7 +789,10 @@ nav {
                 border-radius: 10px;
                 padding: 10px 20px;
                 font-size: 16px;
+<<<<<<< HEAD
+=======
                 height: 40px;
+>>>>>>> fcbdd86 (front final)
                 background-color: $content-bg-color;
                 text-indent: 5%;
                 color: #777;
@@ -473,6 +851,66 @@ nav {
 
 
 
+<<<<<<< HEAD
+// .cateSlider {
+//     display: flex;
+//     flex-wrap: wrap;
+//     min-height: 600px;
+//     padding: 20px 40px;
+//     gap: 10px;
+//     overflow-x: hidden;
+
+//     .categories {
+//         width: 20%;
+//         height: 550px;
+//         background-color: white;
+//         overflow-y: auto;
+//         border-radius: 10px;
+//         padding: 5px 16px;
+
+//         .category-list {
+//             width: 100% !important;
+
+//             .res-katalog {
+//                 display: none;
+//             }
+
+//             .category-name {
+//                 display: flex;
+//                 align-items: center;
+//                 gap: 10px !important;
+
+//             }
+
+//             .arrow-icon {
+//                 stroke: #fbfeff !important;
+//             }
+
+//             a {
+//                 display: flex;
+//                 align-items: center;
+//                 justify-content: space-between;
+//                 width: 100%;
+//                 margin: 15px 0;
+//             }
+//         }
+//     }
+
+//     .slider {
+//         width: 79%;
+//         height: 550px !important;
+//         display: flex;
+
+
+//     }
+
+//     .partner,
+//     .sevices {
+//         width: 100%;
+//     }
+// }
+=======
+>>>>>>> fcbdd86 (front final)
 
 
 @media screen and (max-width:1160px) {
@@ -514,14 +952,23 @@ nav {
             align-items: center;
 
             .search-bar {
+<<<<<<< HEAD
+                .search-response {
+                }
+=======
                 
+>>>>>>> fcbdd86 (front final)
             }
 
             div {
                 width: 100%;
 
                 input {
+<<<<<<< HEAD
+                    background: none;
+=======
                     background-color: white !important;
+>>>>>>> fcbdd86 (front final)
                     height: 100%;
 
                 }
@@ -585,7 +1032,11 @@ nav {
 
 @media screen and (max-width:760px) {
     nav {
+<<<<<<< HEAD
+       
+=======
         
+>>>>>>> fcbdd86 (front final)
         .search-bar-res {
             position: absolute;
             z-index: 60;
@@ -602,16 +1053,26 @@ nav {
                 display: flex;
                 align-items: center;
                 justify-content: center;
+<<<<<<< HEAD
+                background-color: white;
+=======
                 background-color: white ;
+>>>>>>> fcbdd86 (front final)
         
                 .search-icon {
                     display: none;
                 }
         
                 input {
+<<<<<<< HEAD
+                    width: 70%;
+                    border-radius: 5px;
+                    background-color: $content-bg-color;
+=======
                     width: 80%;
                     border-radius: 5px;
                     background-color: $content-bg-color !important;
+>>>>>>> fcbdd86 (front final)
                     text-indent: 10px;
                     margin-left: 20px;
                     height: 34px;
@@ -622,10 +1083,16 @@ nav {
                     align-items: center;
                     justify-content: center;
                     align-self: flex-start;
+<<<<<<< HEAD
+                    width: 30%;
+                    height: 100%;
+                    background-color: white;
+=======
                     width: 20%;
                     height: 100%;
                     background-color: white;
                     font-size: 25px;
+>>>>>>> fcbdd86 (front final)
                 }
             }
         
@@ -637,6 +1104,10 @@ nav {
             }
         }
 
+<<<<<<< HEAD
+        /* Mobil üçün aktiv olduqda */
+=======
+>>>>>>> fcbdd86 (front final)
        
     }
 }
@@ -658,3 +1129,41 @@ nav {
 }
 
 
+<<<<<<< HEAD
+// .search-bar {
+//     position: absolute;
+//     z-index: 60;
+//     .search-box{
+//         position: absolute;
+//         top: -90px;
+//         left: -10%;
+//         width: 80%;
+//         z-index: 6;
+//         height: 30px;
+//         padding: 0;
+//         .search-icon{
+//            display: none;
+//         }
+//         input{
+//            width: 90%;
+//            border-radius: 5px;
+//            background-color: $content-bg-color;
+//         }
+//         .times{
+//            display: flex;
+//            width: 20px;
+//            right: 5px;
+//            background-color: white;
+//         }
+//     }
+   
+//    .search-response {
+//        height: 100%;
+//        position: fixed;
+//        top: 0;
+//        left: 0;
+       
+//    }
+// }
+=======
+>>>>>>> fcbdd86 (front final)

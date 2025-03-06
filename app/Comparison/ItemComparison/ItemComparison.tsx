@@ -96,7 +96,11 @@ const ItemComparison = () => {
             <div className="comparison-title">
                 <h3>Müqayisə</h3>
                 <div className="select-box">
+<<<<<<< HEAD
+                    <button>Tavalar  <span><IoIosArrowDown /></span></button>
+=======
                     <button>Telefonlar  <span><IoIosArrowDown /></span></button>
+>>>>>>> fcbdd86 (front final)
                     <div className="popup"></div>
                 </div>
             </div>

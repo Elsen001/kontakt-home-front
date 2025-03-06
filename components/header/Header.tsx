@@ -152,7 +152,9 @@ const Header = () => {
     useEffect(() => {
         const handleResize = () => {
             setIsMobileSearch(window.innerWidth < 760);
+
         };
+        
     
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
@@ -181,9 +183,9 @@ const Header = () => {
             </header>
             <nav className={header ? "" : "fixedNav"}>
                 <div className="katalog">
-                    <span onClick={toggleCategory}><LuLayoutGrid className="grid" /></span>
-                    <div>Kataloq</div>
-                    <Link href={"/"}><Image style={{ visibility: header ? "hidden" : "visible" }} src={svgLogo} alt="" /></Link>
+                    <span style={{order:pathname!=="/"?"2":"1"}}  onClick={toggleCategory}><LuLayoutGrid className="grid" /></span>
+                    <div style={{order:pathname!=="/"?"3":"2"}} >Kataloq</div>
+                    <Link style={{order:pathname!=="/"?"1":"3"}} href={"/"}><Image style={{ visibility: header ? "hidden" : "visible" }} src={svgLogo} alt="" /></Link>
                 </div>
                 <div className="search">
                     <div className={ isMobileSearch && open ? "search-bar-res": "search-bar"}>

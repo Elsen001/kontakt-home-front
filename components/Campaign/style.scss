@@ -1,11 +1,14 @@
-.capmaignLogo{
+.capmaignLogo {
+    width: 100%;
     position: fixed;
     top: 0;
     z-index: 3;
-    img{
-        width: 100%;
+
+    img {
         height: 50px;
+        width: 100%;
         object-fit: cover;
         object-position: left;
     }
 }
+

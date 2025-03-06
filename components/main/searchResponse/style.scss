@@ -131,6 +131,7 @@
 @media screen and (max-width:1025px) {
     .search-items {
         height: 100%;
+        left: 49%;
         box-shadow: none;
     }
 }
@@ -142,7 +143,6 @@
         overflow-y: auto;
         flex-direction: column;
         background-color: white;
-
         .popular-category,
         .popular-products {
             width: 100%;

@@ -94,9 +94,9 @@ const ProductHead: React.FC<DetailsProps> = ({ item, averageRating,comments,isLo
 
     useEffect(() => {
         const colorScroll = () => {
-            if (window.scrollY < 170) {
+            if (window.scrollY < 70) {
                 setActiveButton(0);
-            } else if (window.scrollY >= 170 && window.scrollY <= 590) {
+            } else if (window.scrollY < 970) {
                 setActiveButton(1);
             } else {
                 setActiveButton(2);
@@ -105,7 +105,7 @@ const ProductHead: React.FC<DetailsProps> = ({ item, averageRating,comments,isLo
 
         window.addEventListener("scroll", colorScroll);
         return () => window.removeEventListener("scroll", colorScroll);
-    }, []);
+    }, [window.scrollY]);
 
 
     return (

@@ -67,7 +67,7 @@
                     }
 
                     img {
-                        margin-top: 15px;
+                        margin-top: 50px;
                         padding: 0;
                         width: 90%;
                         height: 200px;
@@ -82,7 +82,8 @@
 
                     p {
                         padding-bottom: 5px;
-
+                      margin-top: 10px;
+                      height: 25px;
                         span {
                             margin: 0 3px;
 
@@ -108,7 +109,6 @@
                     flex-direction: column;
                     gap: 10px;
                     margin-top: 20px;
-
                     button {
                         position: relative;
                         width: 100%;
@@ -171,7 +171,7 @@
         }
         .section-2 {
             width: 100% !important;
-            height: 300px;
+            height: 320px;
             z-index: 2;
             border-radius: 10px;
             margin: 20px 0;
@@ -202,9 +202,10 @@
 
                     .offer-head {
                         display: flex;
-
+                        align-items: flex-start;
                         .product-title {
                             font-size: 14px;
+                            padding-bottom: 1px;
                         }
 
                         .month {
@@ -215,7 +216,7 @@
                             display: flex;
                             align-items: flex-start;
                             flex-direction: column;
-
+                            height: auto;
                             span {
                                 margin: 0;
 
@@ -236,12 +237,12 @@
                             width: 150px;
                             height: 150px;
                             margin-right: 20px;
+                            margin-top: 0;
                             order: 1;
                         }
 
                         &>div {
                             width: 300px;
-                            height: 100px;
                             display: flex;
                             flex-direction: column;
                             justify-content: center;
@@ -254,7 +255,7 @@
                         width: 100%;
                         position: absolute;
                         left: 174px;
-                        bottom: 50px;
+                        bottom: 60px;
 
                         button {
                             width: 130px;

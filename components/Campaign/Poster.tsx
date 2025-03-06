@@ -1,19 +1,4 @@
 import "./style.scss";
-<<<<<<< HEAD
-import React from 'react'
-import logo from "../Campaign/download.png";
-import Image from 'next/image';
-
-const Poster = () => {
-  return (
-    <div className='capmaignLogo'>
-      <Image src={logo} alt=''/>
-    </div>
-  )
-}
-
-export default Poster
-=======
 import React, { useEffect, useState } from "react";
 import logo from "../Campaign/download.jpg";
 import logo2 from "../Campaign/download2.jpg";
@@ -50,4 +35,3 @@ const Poster = () => {
 };
 
 export default Poster;
->>>>>>> fcbdd86 (front final)

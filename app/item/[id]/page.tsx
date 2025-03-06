@@ -50,7 +50,6 @@ const Page = () => {
     }
   };
 
-  console.log(item)
 
 
   useEffect(() => {

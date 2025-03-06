@@ -32,7 +32,6 @@ const ItemComparison = () => {
     const [cartItems, setCartItems] = useState<string[]>([]); 
     const [balanceName, setBalanceName] = useState<BalanceItem[]>([]);
     const [selectedOption, setSelectedOption] = useState<"all" | "similiar" | "differences">("all");
-    console.log(balanceName)
 
     async function getBalanceItem() {
         try {
@@ -96,11 +95,7 @@ const ItemComparison = () => {
             <div className="comparison-title">
                 <h3>Müqayisə</h3>
                 <div className="select-box">
-<<<<<<< HEAD
-                    <button>Tavalar  <span><IoIosArrowDown /></span></button>
-=======
                     <button>Telefonlar  <span><IoIosArrowDown /></span></button>
->>>>>>> fcbdd86 (front final)
                     <div className="popup"></div>
                 </div>
             </div>

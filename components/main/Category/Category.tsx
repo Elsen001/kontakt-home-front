@@ -2,20 +2,10 @@
 import "./category.scss";
 import { getCategoryItems, selectError, selectIsLoading } from "@/redux/reducers/CategoryReducer";
 import { AppDispatch, RootState } from "@/redux/store/store";
-<<<<<<< HEAD
-import { faChevronRight, faLightbulb } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Link from "next/link";
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import Slider from "../Slider/Slider";
-
-=======
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import svg_arrow from "../../../assests/images/svg-arrow.svg"
->>>>>>> fcbdd86 (front final)
 import svg1 from "./categoryIcons/1.svg";
 import svg2 from "./categoryIcons/2.svg";
 import svg3 from "./categoryIcons/3.svg";
@@ -89,15 +79,6 @@ const Category = () => {
             <Link key={item.id} className="c-link" href={"/"}
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
-<<<<<<< HEAD
-            >
-              <div className="category-name">
-                <Image src={icons[index % icons.length]} alt={`Icon for ${item.name}`} />
-                <div className="item">{item.name}</div>
-              </div>
-              <div className="arrow-icon">
-                <FontAwesomeIcon icon={faChevronRight} />
-=======
               
             >
               <div className="category-name">
@@ -106,7 +87,6 @@ const Category = () => {
               </div>
               <div className="arrow-icon">
                 <Image  className="svg" src={svg_arrow} alt=""/>
->>>>>>> fcbdd86 (front final)
               </div>
             </Link>
           ))}

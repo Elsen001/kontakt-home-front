@@ -67,11 +67,7 @@ const SuperOffer: React.FC<productOfferProps> = ({ productOfferItems }) => {
                 }}
                 className="mySwiper"
             >
-<<<<<<< HEAD
-                    // {
-=======
                      {
->>>>>>> fcbdd86 (front final)
                     productOfferItems.map((i, index) => {
                         const isInCart = cart.some(cartItem => cartItem.id === i.id);
 

@@ -25,7 +25,6 @@ const RouteWay: React.FC<DetailsProps> = ({ name }) => {
 
 
     useEffect(() => {
-        console.log(name, cleanedPathname, validPaths)
     }, [pathname, name]);
 
     return (

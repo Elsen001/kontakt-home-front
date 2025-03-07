@@ -60,15 +60,16 @@
     .swiper {
         z-index: 1;
         overflow: hidden;
+        position: relative;
 
         .swiper-slide {
+            width: 19% !important;
             background-color: white;
             height: 440px !important;
             overflow: hidden;
             border-radius: 10px;
             margin-bottom: 20px;
             cursor: pointer;
-
             &:first-child {
                 margin-left: 50px;
 
@@ -181,7 +182,6 @@
 
             .add-to-cart {
                 display: flex;
-                justify-content: space-between;
                 margin-top: 50px;
                 .fa-balance{
                     *{
@@ -197,7 +197,7 @@
 
 
                 button {
-                    padding: 10px 15px;
+                    padding: 10px 10px;
                     font-size: 20px;
                     border-radius: 10px;
                     display: flex;
@@ -210,13 +210,13 @@
                     &:nth-child(3) {
                         font-size: 14px;
                         display: flex;
-                        justify-content: space-around;
                         align-items: center;
-                        width: 130px;
+                        width: 100%;
                         font-size: 14px;
                         font-weight: 500;
                         position: relative;
                         background-color: #ff003c;
+                        gap: 9px;
 
                         .spin {
                             @include spin;

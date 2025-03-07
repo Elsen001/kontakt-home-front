@@ -54,7 +54,7 @@ const DelightfulSuggestions: React.FC<productOfferProps> = ({ productOfferItems 
 
 
     return (
-        <section className="section-sales">
+        <section style={{marginBottom:"30px"}} className="section-sales">
             <div className="special-slider-container">
                 <div className="sales-leaders">
                     <h4>Birlikdə daha sərfəli</h4>

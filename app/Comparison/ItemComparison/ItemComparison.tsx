@@ -63,9 +63,28 @@ const ItemComparison = () => {
         const allFeatures = balanced.flatMap(item => item.features ? Object.keys(item.features) : []);
         const uniqueFeatures = [...new Set(allFeatures)];
     
-        const similarFeatures = uniqueFeatures.filter(featureName =>
-            balanced.every(item => item.features && item.features[featureName] === balanced[0].features?.[featureName])
-        );
+        const similarFeatures = uniqueFeatures.filter(featureName => {
+            const firstItemValue = balanced[0].features?.[featureName];
+    
+            return balanced.every(item => {
+                const itemValue = item.features?.[featureName];
+    
+                if (firstItemValue === undefined || itemValue === undefined) return false;
+    
+                if (typeof firstItemValue === 'string' && typeof itemValue === 'string') {
+                    return firstItemValue.includes(itemValue) || itemValue.includes(firstItemValue);
+                }
+    
+                if (Array.isArray(firstItemValue) && Array.isArray(itemValue)) {
+                    return (
+                        firstItemValue.every(val => itemValue.includes(val)) ||
+                        itemValue.every(val => firstItemValue.includes(val))
+                    );
+                }
+    
+                return JSON.stringify(firstItemValue) === JSON.stringify(itemValue);
+            });
+        });
     
         return similarFeatures;
     };

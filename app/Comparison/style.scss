@@ -270,6 +270,7 @@ $item-padding: 20px;
                     img {
                         width: 200px;
                         height: 180px;
+                        object-fit: contain;
                     }
 
                     .price {

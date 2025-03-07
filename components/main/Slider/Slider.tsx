@@ -66,7 +66,7 @@ const Slider = () => {
           {
             sliderOffer?.map((item) => (
               <SwiperSlide >
-                <Link key={item.id} href={"/cart"}>
+                <Link key={item.id} href={"/"}>
                   <img src={item.image} alt="" />
                 </Link>
               </SwiperSlide>

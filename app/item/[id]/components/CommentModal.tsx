@@ -26,7 +26,6 @@ const NameRatingModal: React.FC<ModalProps> = ({ onSubmit, onClose }) => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (name.trim() === "" || rating === 0) {
-      console.log("Alert çıxmalı idi");
       alert("Zəhmət olmasa adınızı daxil edin və rating seçin!");
       return;
     }

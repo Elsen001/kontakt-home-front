@@ -14,7 +14,7 @@ export interface CartItem {
     discount: number;
     qty: number;
     totalPrice: number;
-    warrantyAmount: number; // Her ürün için ayrı zəmanət məbləği
+    warrantyAmount: number; 
 }
 
 interface CartState {

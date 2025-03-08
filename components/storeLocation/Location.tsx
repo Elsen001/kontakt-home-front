@@ -5,7 +5,7 @@ const Location = ({ selectedLocation }: { selectedLocation: string }) => {
   const stores = [
     {
       name: "Vurğun Residence",
-      address: "Nəsimi r-nu, S. Vurğun küç. 110 (Bakı Dövlət Sirkiniyanı)",
+      address: "Nəsimi r-nu, S. Vurğun küç. 110 (Bakı Dövlət Sirkinin yanı)",
       workingHours: "10:00-dan 21:00-dək",
     },
     {

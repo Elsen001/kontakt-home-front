@@ -22,7 +22,7 @@ const CartItems = () => {
 
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedProductId, setSelectedProductId] = useState<number | null>(null);
-    const [selectedItems, setSelectedItems] = useState<number[]>(cart.map(item => item.id)); // Default olaraq bütün məhsullar seçili
+    const [selectedItems, setSelectedItems] = useState<number[]>(cart.map(item => item.id)); 
 
     const formattedPrice = Number(cartTotalPrice).toFixed(2) + " ₼";
     const formattedDiscount = Number(cartTotalDiscount).toFixed(2) + " ₼";
@@ -36,24 +36,22 @@ const CartItems = () => {
     const handleCheckboxChange = (productId: number) => {
         setSelectedItems(prev =>
             prev.includes(productId)
-                ? prev.filter(id => id !== productId) // Seçimi ləğv et
-                : [...prev, productId] // Seçimi əlavə et
+                ? prev.filter(id => id !== productId) 
+                : [...prev, productId] 
         );
     };
 
     const handleDeleteSelectedItems = () => {
         selectedItems.forEach(id => dispatch(deleteItems(id)));
-        setSelectedItems([]); // Seçilənləri sıfırla
+        setSelectedItems([]); 
     };
 
     const handleSelectAll = () => {
-        // Əgər ən azı bir məhsulun seçimi ləğv edilibsə, hamısını seç
         if (selectedItems.length < cart.length) {
             setSelectedItems(cart.map(item => item.id));
         }
     };
 
-    // "Hamısını seç" düyməsinin aktiv/deaktiv olmasını təyin et
     const isSelectAllDisabled = selectedItems.length === cart.length;
 
     return (
@@ -65,7 +63,7 @@ const CartItems = () => {
                         <button
                             className={`select-all ${isSelectAllDisabled ? 'select-all-deactive' : 'select-all-active'}`}
                             onClick={handleSelectAll}
-                            disabled={isSelectAllDisabled} // Əgər bütün məhsullar seçilidirsə, düymə deaktiv olacaq
+                            disabled={isSelectAllDisabled} 
                         >
                             Hamısını seç
                         </button>

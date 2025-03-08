@@ -36,6 +36,7 @@ const ProductHead: React.FC<DetailsProps> = ({ item, averageRating,comments,isLo
     const sale = (item?.oldPrice || 0) - (item?.price || 0);
     const [activePeriod, setActivePeriod] = useState<number | null>(12);
     const [monthlyPayment, setMonthlyPayment] = useState(0);
+    const [birbankCredit,SetBirbank]=useState(0)
     const [loading, setLoading] = useState<string | null>(null);
     const [cartItems, setCartItems] = useState<string[]>([]);
     const [balanceItems, setBalanceItems] = useState<string[]>([]); 
@@ -53,6 +54,7 @@ const ProductHead: React.FC<DetailsProps> = ({ item, averageRating,comments,isLo
     };
 
     useEffect(() => {
+        SetBirbank(item.price/12)
         if (item?.price) {
             const monthly = item.price / 12;
             setMonthlyPayment(monthly);
@@ -109,7 +111,7 @@ const ProductHead: React.FC<DetailsProps> = ({ item, averageRating,comments,isLo
 
     return (
         <>
-            <ProductNav item={item} />
+            <ProductNav handleAddToCart={handleAddToCart} setCartItems={setCartItems} cartItems={cartItems} item={item} />
             <div className='head-container'>
                 <div className="head-images">
                     <div className="section-1">
@@ -217,7 +219,7 @@ const ProductHead: React.FC<DetailsProps> = ({ item, averageRating,comments,isLo
                         <div className="credit-card">
                             <span>
                                 <Image src={birbank} alt='' />
-                                <span>12 ay 315.00 ₼ </span>
+                                <span>12 ay {birbankCredit?.toFixed(2)} ₼ </span>
                             </span>
                         </div>
                     </div>

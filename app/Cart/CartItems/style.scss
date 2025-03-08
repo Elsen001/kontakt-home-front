@@ -36,8 +36,15 @@ $padding-container: 10px 50px;
                 background-color: $bg-white;
                 padding: $padding-title;
                 display: flex;
+                .select-all-active {
+                    margin-right: 8px;
 
-                .select-all {
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+
+                .select-all-deactive {
                     color: #777;
                     margin-right: 8px;
 
@@ -96,16 +103,33 @@ $padding-container: 10px 50px;
                 .input {
                     position: relative;
                     margin-left: 25px;
+                    input{
+                        width: 18px;
+                        height: 18px;
+                        border: 1px solid black;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        appearance: none;
+                        border-radius: 3px;
+                        &::before {
+                            content: "✓";
+                            color: white;
+                            font-size: 14px;
+                            font-weight: bold;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+                    }
                 }
 
                 input:checked {
-                    transform: scale(1.5);
+                    background-color: black;
 
                 }
 
-                input:not(:checked) {
-                    transform: scale(1);
-                }
+               
 
                 img {
                     width: 78px;
@@ -136,6 +160,11 @@ $padding-container: 10px 50px;
 
                         * {
                             font-size: 19px;
+                        }
+                        img{
+                            width: 20px;
+                            height: 20px;
+                            margin-left: 0;
                         }
 
                     }
@@ -240,6 +269,22 @@ $padding-container: 10px 50px;
             background-color: $bg-white;
         }
 
+        .order-product-container{
+            display: flex;
+            flex-direction: column;
+            background-color: $bg-white;
+            .warranty{
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                font-size: 14px;
+                margin-top: 10px;
+                .price-war{
+                    font-weight: 600;
+                    font-size: 14px;
+                }
+            }
+        }
         .order-product {
             display: flex;
             align-items: center;
@@ -256,6 +301,7 @@ $padding-container: 10px 50px;
                     color: #FF9933;
                 }
             }
+            
 
             .prd-price {
                 display: flex;

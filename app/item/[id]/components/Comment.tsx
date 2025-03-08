@@ -109,38 +109,39 @@ const Comment: React.FC<CommentProps> = ({ productId,averageRating,fetchComments
         />
       )}
       <div className="comments">
-        {comments.map((comment) => (
-          <div key={comment._id} className="comment-item">
-            <div className="users">
-              <div className="user">
-                {comment.userName.charAt(0).toUpperCase()}
-              </div>
-              <div className="date-added">
-                <div className="name">{comment.userName}</div>
-                <div className="date">
-                  {new Date(comment.createdAt).toLocaleDateString()}
-                </div>
-              </div>
-            </div>
-            <div className="star-comment-container">
-              <div className="star-count">
-                {[...Array(5)].map((_, index) => (
-                  <Image
-                    key={index}
-                    src={svgStar}
-                    alt={`Ulduz ${index + 1}`}
-                    style={{
-                      filter: index < comment.starRating ? "grayscale(0%)" : "grayscale(100%)"
-                    }}
-                    className="form-icon"
-                  />
-                ))}
-              </div>
-              <div className="user-comment">{comment.commentText}</div>
-            </div>
+  {[...comments].reverse().map((comment) => (
+    <div key={comment._id} className="comment-item">
+      <div className="users">
+        <div className="user">
+          {comment.userName.charAt(0).toUpperCase()}
+        </div>
+        <div className="date-added">
+          <div className="name">{comment.userName}</div>
+          <div className="date">
+            {new Date(comment.createdAt).toLocaleDateString()}
           </div>
-        ))}
+        </div>
       </div>
+      <div className="star-comment-container">
+        <div className="star-count">
+          {[...Array(5)].map((_, index) => (
+            <Image
+              key={index}
+              src={svgStar}
+              alt={`Ulduz ${index + 1}`}
+              style={{
+                filter: index < comment.starRating ? "grayscale(0%)" : "grayscale(100%)"
+              }}
+              className="form-icon"
+            />
+          ))}
+        </div>
+        <div className="user-comment">{comment.commentText}</div>
+      </div>
+    </div>
+  ))}
+</div>
+
     </div>
   );
 };

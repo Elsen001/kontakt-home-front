@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../style/modal.scss";
 import { FaTimes } from "react-icons/fa";
 import svgStar from "../../../../assests/images/star-svgrepo-com.svg";
@@ -8,28 +8,43 @@ import Image from "next/image";
 interface ModalProps {
   onSubmit: (name: string, rating: number) => void;
   onClose: () => void;
+
 }
 
 const NameRatingModal: React.FC<ModalProps> = ({ onSubmit, onClose }) => {
   const [name, setName] = useState("");
   const [rating, setRating] = useState(0);
+  const [button, setButton] = useState(false)
+
 
   const handleStarClick = (star: number) => {
+    setButton(true)
     setRating(star);
-    console.log("Seçilen rating:", star); 
+    console.log("Seçilen rating:", star);
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (name.trim() === "" || rating === 0) {
+      console.log("Alert çıxmalı idi");
       alert("Zəhmət olmasa adınızı daxil edin və rating seçin!");
       return;
     }
-    onSubmit(name, rating); 
+
+
+    onSubmit(name, rating);
   };
+  useEffect(() => {
+    if (name.trim() !== "" && rating !== 0) {
+      setButton(true);
+    } else {
+      setButton(false);
+    }
+  }, [name, rating]);
+  
 
   return (
-    <div className="modal-overlay" role="dialog" aria-modal="true">
+    <div className="modal-overlay-2" role="dialog" aria-modal="true">
       <div className="modal">
         <div className="head">
           <h3>Məhsulu qiymətləndirin</h3>
@@ -56,15 +71,15 @@ const NameRatingModal: React.FC<ModalProps> = ({ onSubmit, onClose }) => {
           ))}
         </div>
         <form onSubmit={handleSubmit}>
+          <label htmlFor=""><span>*</span> Ad</label>
           <input
             type="text"
-            placeholder="Adınız"
             aria-label="Adınız"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
           <div className="modal-buttons">
-            <button type="submit">Göndər</button>
+            <button className={!button ? "deActive-btn" : ""} type="submit">Göndər</button>
           </div>
         </form>
       </div>

@@ -487,88 +487,88 @@ nav {
     justify-content: center;
     z-index: 1000;
 
-}
-
-.modal {
-    background: white;
-    width: fit-content;
-    max-width: 90%;
-    height: 228px;
-    padding: 20px 30px;
-    border-radius: 8px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 20px;
-
-    .modal-title {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        .title {
-            font-weight: 600;
-            font-size: 16px;
-        }
-
-        button {
-            background: transparent;
-
-            .icon-times-sign {
-                font-size: 25px;
-            }
-        }
-    }
-
-    .modal-images {
-        display: flex;
-        flex-wrap: wrap;
-
-        gap: 18px;
-
-        a {
-            padding: 10px;
-            border-radius: 10px;
-            background-color: $content-bg-color;
-        }
-
-        img {
-            width: 140px;
-            height: 54px;
-            object-fit: contain;
-        }
-
-    }
-
-    .modal-content {
+    .modal {
+        background: white;
+        width: fit-content;
+        max-width: 90%;
+        height: 228px;
+        padding: 20px 30px;
+        border-radius: 8px;
+        position: relative;
         display: flex;
         flex-direction: column;
-
-        div {
+        justify-content: center;
+        gap: 20px;
+    
+        .modal-title {
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            gap: 5px;
-            background-color: #E6F5FA;
-            padding: 12px 16px;
-            border-radius: 10px;
-            font-size: 14px;
-            font-weight: 500;
-
-            .info-icon {
-                font-size: 20px;
+    
+            .title {
+                font-weight: 600;
+                font-size: 16px;
+            }
+    
+            button {
+                background: transparent;
+    
+                .icon-times-sign {
+                    font-size: 25px;
+                }
             }
         }
-
-    }
-
-    button {
-        padding: 15px;
-        border-radius: 10px;
-        font-size: 18px;
-        font-weight: 500;
+    
+        .modal-images {
+            display: flex;
+            flex-wrap: wrap;
+    
+            gap: 18px;
+    
+            a {
+                padding: 10px;
+                border-radius: 10px;
+                background-color: $content-bg-color;
+            }
+    
+            img {
+                width: 140px;
+                height: 54px;
+                object-fit: contain;
+            }
+    
+        }
+    
+        .modal-content {
+            display: flex;
+            flex-direction: column;
+    
+            div {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                background-color: #E6F5FA;
+                padding: 12px 16px;
+                border-radius: 10px;
+                font-size: 14px;
+                font-weight: 500;
+    
+                .info-icon {
+                    font-size: 20px;
+                }
+            }
+    
+        }
+    
+        button {
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 500;
+        }
     }
 }
+
 
 @media screen and (max-width:650px) {
     .modal-overlay {
@@ -623,7 +623,6 @@ nav {
             display: flex;
             align-items: center;
 
-            .search-bar {}
 
             div {
                 width: 100%;

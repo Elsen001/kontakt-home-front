@@ -11,6 +11,8 @@ import { getItemById, selectError, selectIsLoading, selectItem } from '@/redux/r
 import { AppDispatch } from '@/redux/store/store';
 import { useParams } from 'next/navigation';
 import axios from 'axios';
+import { OfferItems } from '@/types/types';
+import { addToCart } from '@/redux/reducers/AddToCartReducer';
 
 interface CommentType {
   _id?: string;
@@ -27,9 +29,12 @@ const Page = () => {
   const item = useSelector(selectItem);
   const [averageRating, setAverageRating] = useState(0);
   const [comments, setComments] = useState<CommentType[]>([]);
+
   const isLoading = useSelector(selectIsLoading);
   const params = useParams();
   const id = params.id as string;
+
+
 
   const calculateAverageRating = (comments: CommentType[]) => {
     if (comments.length === 0) {
@@ -64,7 +69,7 @@ const Page = () => {
     <>
       <RouteWay name={item.name} />
       <div className='details'>
-        <ProductHead isLoading={isLoading}  comments={comments} averageRating={averageRating} item={item} />
+        <ProductHead  isLoading={isLoading}  comments={comments} averageRating={averageRating} item={item} />
         <Features item={item} />
         <Comment comments={comments} fetchComments={fetchComments} averageRating={averageRating} calculateAverageRating={calculateAverageRating} productId={id} />
       </div>

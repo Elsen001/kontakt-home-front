@@ -15,26 +15,17 @@ import { addToBalanced } from "@/redux/reducers/BalancedReducer";
 
 interface DetailsProps {
     item: OfferItems
+    cartItems:any
+    setCartItems:any
+    handleAddToCart:any
 }
 
-const ProductNav: React.FC<DetailsProps> = ({ item }) => {
+const ProductNav: React.FC<DetailsProps> = ({ item,cartItems,setCartItems,handleAddToCart }) => {
     const dispatch = useDispatch<AppDispatch>();
-    const [cartItems, setCartItems] = useState<string[]>([]);
     const [balanceItems, setBalanceItems] = useState<string[]>([]);
     const [prdNav, setPrdNav] = useState(false);
     const [loading, setLoading] = useState<string | null>(null);
 
-
-
-    const handleAddToCart = (item: OfferItems) => {
-        setLoading(String(item.id));
-        dispatch(addToCart(item));
-
-        setTimeout(() => {
-            setLoading(null);
-            setCartItems(prev => [...prev, String(item.id)]);
-        }, 1000);
-    };
 
     const handleAddToBalance = (item: OfferItems) => {
         dispatch(addToBalanced(item));

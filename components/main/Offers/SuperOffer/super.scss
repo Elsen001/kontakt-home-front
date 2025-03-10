@@ -1,6 +1,11 @@
 @use "../../../../assests/style/variables.scss" as *;
 @use "../../../../assests/style/mixin.scss" as *;
 
+
+.main-link{
+    cursor: pointer;
+}
+
 .super-offer {
     margin: 40px 0 20px 0;
     height: 520px;

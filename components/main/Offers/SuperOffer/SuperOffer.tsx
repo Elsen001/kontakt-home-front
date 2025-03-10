@@ -67,43 +67,43 @@ const SuperOffer: React.FC<productOfferProps> = ({ productOfferItems }) => {
                 }}
                 className="mySwiper"
             >
-                     {
+                {
                     productOfferItems.map((i, index) => {
                         const isInCart = cart.some(cartItem => cartItem.id === i.id);
 
                         return (
-                            <SwiperSlide key={index}>
-                                <Link href={`/item/${i.id}`}>
-                                    <img src={i.image} alt="" />
-                                    <span className="sale-percent">{calc(i.price, i.oldPrice)}%</span>
-                                </Link>
-                                <div className="content-product">
-                                    <div className="product-title">{i.name.slice(0, 27)}</div>
-                                    <div className="product-price-cart">
-                                        <div className="sale"><span>{(i.price - i.oldPrice).toFixed(0)}₼</span></div>
-                                        <div className="price-container">
-                                            <div className='price-item'>
-                                                <div className="price-before">{i.price}₼</div>
-                                                <div className="price-after">{i.oldPrice}₼</div>
+                                <SwiperSlide key={index}>
+                                    <Link href={`/item/${i.id}`}>
+                                        <img src={i.image} alt="" />
+                                        <span className="sale-percent">{calc(i.price, i.oldPrice)}%</span>
+                                    </Link>
+                                    <div className="content-product">
+                                        <div className="product-title">{i.name.slice(0, 27)}</div>
+                                        <div className="product-price-cart">
+                                            <div className="sale"><span>{(i.price - i.oldPrice).toFixed(0)}₼</span></div>
+                                            <div className="price-container">
+                                                <div className='price-item'>
+                                                    <div className="price-before">{i.price}₼</div>
+                                                    <div className="price-after">{i.oldPrice}₼</div>
+                                                </div>
+                                                <div className='credit-month'>0% 6 ay</div>
                                             </div>
-                                            <div className='credit-month'>0% 6 ay</div>
-                                        </div>
-                                        <div className="add-to-cart">
-                                            <button><FaRegHeart className="icon" /></button>
-                                            <button onClick={() => handleAddToBalance(i)}><FaBalanceScale className={balanceItems.includes(String(i.id)) ? "fa-balance icon" : "icon"} /></button>
-                                            <button
-                                                className={cartItems.includes(String(i.id)) ? "inCart" : ""}
-                                                onClick={() => handleAddToCart(i)}
-                                            >
-                                                <FontAwesomeIcon icon={faCartShopping} className='icon icon-shopping ' />
-                                                <span>{cartItems.includes(String(i.id)) ? "Səbətdə" : "Səbətə at"}</span>
-                                                {loading === String(i.id) && <span className="spin"><Image src={gif} alt="loading..." /></span>}
-                                            </button>
+                                            <div className="add-to-cart">
+                                                <button><FaRegHeart className="icon" /></button>
+                                                <button onClick={() => handleAddToBalance(i)}><FaBalanceScale className={balanceItems.includes(String(i.id)) ? "fa-balance icon" : "icon"} /></button>
+                                                <button
+                                                    className={cartItems.includes(String(i.id)) ? "inCart" : ""}
+                                                    onClick={() => handleAddToCart(i)}
+                                                >
+                                                    <FontAwesomeIcon icon={faCartShopping} className='icon icon-shopping ' />
+                                                    <span>{cartItems.includes(String(i.id)) ? "Səbətdə" : "Səbətə at"}</span>
+                                                    {loading === String(i.id) && <span className="spin"><Image src={gif} alt="loading..." /></span>}
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
-                            </SwiperSlide>
+                                </SwiperSlide>
                         );
                     })
                 }

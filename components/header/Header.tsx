@@ -255,7 +255,7 @@ const Header = () => {
                                     handleSearch(e.target.value);
                                 }}
                                 type="text"
-                                placeholder='Axtaris...'
+                                placeholder='Axtarış...'
                                 onFocus={openResponse}
                                 onBlur={() => setTimeout(() => setOpen(false), 200)}
                             />

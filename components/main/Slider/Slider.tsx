@@ -107,7 +107,7 @@ const Slider = () => {
                     {loading === String(item.id) && <span className="spin"><Image src={gif} alt="loading..." /></span>}
                   </button>
 
-                  <Link href={"/"}>Butun teklifleri gor</Link>
+                  <Link href={"/"}>Bütün təklifləri gör</Link>
                 </div>
               </SwiperSlide>
 

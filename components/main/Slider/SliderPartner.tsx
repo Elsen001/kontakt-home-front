@@ -1,6 +1,6 @@
 "use client";
 import "./partner.scss";
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -59,9 +59,23 @@ function SliderPartner() {
       },
     ]
   };
+    const [header, setHeader] = useState(true);
+
+  useEffect(() => {
+          const handleScroll = () => {
+              if (window.scrollY > 0) {
+                  setHeader(false);
+              } else {
+                  setHeader(true);
+              }
+          };
+  
+          window.addEventListener("scroll", handleScroll);
+          return () => window.removeEventListener("scroll", handleScroll);
+      }, []);
 
   return (
-    <div className="slider-container">
+    <div className="slider-container" style={{margin:!header?"790px auto 10px":"620px auto 10px"}}>
       <Slider ref={sliderRef} {...settings}>
         {partnerImages.map((image, index) => (
           <div key={index} className="slider-item">

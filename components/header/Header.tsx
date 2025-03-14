@@ -192,8 +192,8 @@ const Header = () => {
                 </Link>
                 <div className="links">
                     <Link prefetch={true} className={`link ${pathname === '/Trade-in' ? 'active' : ''}`} href="/Trade-in">Trade-in</Link>
-                    <Link prefetch={true} className={`link ${pathname === '/Magazalar' ? 'active' : ''}`} href="/Magazalar">Magazalar</Link>
-                    <Link prefetch={true} className={`link ${pathname === '/korporativ-satislar' ? 'active' : ''}`} href="/korporativ-satislar">Korporativ satislar</Link>
+                    <Link prefetch={true} className={`link ${pathname === '/Magazalar' ? 'active' : ''}`} href="/Magazalar">Mağazalar</Link>
+                    <Link prefetch={true} className={`link ${pathname === '/korporativ-satislar' ? 'active' : ''}`} href="/korporativ-satislar">Korporativ satışlar</Link>
                 </div>
                 <div className="register">
                     <span className='cont'><span className="color">*</span> 6060</span>

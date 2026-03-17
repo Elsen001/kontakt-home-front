@@ -1,36 +1,149 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Kontact Home
 
-## Getting Started
+Kontact Home is a modern web application that combines **e-commerce functionality with location-based services**.
+The platform allows users to search products, compare them, add items to cart, explore store locations on an interactive map, and interact through comments and reviews.
 
-First, run the development server:
+---
+
+# 🚀 Features
+
+### 🛒 E-commerce
+
+* Add to Cart system
+* Product comparison
+* Product detail pages
+* Warranty (Guarantee) management
+* Product comments and reviews
+
+### 🔍 Search & Navigation
+
+* Fast product search
+* Product filtering
+* Dynamic navigation
+
+### 🗺 Map Integration
+
+* Interactive map with store locations
+* Branch navigation using Leaflet
+* Location visualization
+
+### 🌍 Multi-language Support
+
+* Internationalization with **i18next**
+* Multi-language UI support
+
+### ⚡ UI & Experience
+
+* Responsive design
+* Product sliders and carousels
+* Smooth UI interactions
+
+---
+
+# 🛠 Tech Stack
+
+## Frontend
+
+* **Next.js 15**
+* **React 19**
+* **TypeScript**
+* **TailwindCSS**
+* **SASS**
+
+## State Management
+
+* **Redux Toolkit**
+* **React Redux**
+* **Next Redux Wrapper**
+
+## API & Data
+
+* **Axios**
+* REST API integration
+
+## Map & Location
+
+* **Leaflet**
+* **React Leaflet**
+
+## Internationalization
+
+* **i18next**
+* **react-i18next**
+* **next-i18next**
+
+## UI Libraries
+
+* **React Icons**
+* **FontAwesome**
+* **Swiper**
+* **React Slick**
+
+## Utilities
+
+* **UUID**
+
+---
+
+```text
+
+
+# ⚙️ Installation
+
+### Clone repository
+
+```bash
+git clone https://github.com/yourusername/kontact-home.git
+```
+
+### Go to project folder
+
+```bash
+cd kontact-home
+```
+
+### Install dependencies
+
+```bash
+npm install
+```
+
+### Run development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Application will run at:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+# 🎯 Project Purpose
 
-To learn more about Next.js, take a look at the following resources:
+The goal of this project is to create a **modern scalable platform** where users can:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+* Discover products
+* Compare items
+* Interact with product content
+* Find store locations
+* Use a fast and modern UI
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+# 📌 Future Improvements
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+* Online payment integration
+* Order management system
+* User authentication
+* Admin dashboard
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+# 📄 License
+
+MIT License
+

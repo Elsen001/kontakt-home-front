@@ -1,19 +1,9 @@
 import type { NextConfig } from "next";
+const { i18n } = require("./next-i18next.config");
 
 const nextConfig: NextConfig = {
-  i18n: {
-    locales: ["az", "ru"],  // Dəstəklənən dillər
-    defaultLocale: "az",    // Standart dil
-  },
-  async redirects() {
-    return [
-      {
-        source: "/ru",
-        destination: "/",  // /ru → ana səhifəyə yönləndir
-        permanent: true,
-      },
-    ];
-  },
+  i18n,
+  reactStrictMode: true,
 };
 
 export default nextConfig;

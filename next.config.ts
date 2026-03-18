@@ -1,9 +1,11 @@
-import type { NextConfig } from "next";
-const { i18n } = require("./next-i18next.config");
-
-const nextConfig: NextConfig = {
-  i18n,
-  reactStrictMode: true,
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  serverExternalPackages: [
+    'pino',
+    'pino-pretty',
+    'thread-stream',
+    // əgər web3 ilə işləyirsənsə → "@walletconnect/..." və s.
+  ],
 };
 
-export default nextConfig;
+module.exports = nextConfig;
